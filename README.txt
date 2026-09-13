@@ -13,8 +13,12 @@ CUMCM 2026 B 问题1–4 论文与代码（最终稿）
   code/shared/            共用几何与演练入口
   code/src_jianmo_b_sim/  覆盖半径等闭式几何
 
-问题四演练（完成面板，非正式测试）
-  94W6-GKZD-JQQR-WHHE  16/16  267.641 s
-  U3UH-8T3Y-3TSU-Q2A5  12/12  617.168 s
-  U9B5-CN4M-ZBEN-Y3JH  11/11  718.879 s
-  合并不配对 502.460 s/源，平均路程 25.1 km
+问题三正式测试（弹窗无总数；HTTP 清除个数 / 均时 / 程序运行时间）
+  TKUB-AWDW-FWUJ-53UT  12  252.466 s  4.890 s
+  YZRC-HM6Q-TAFH-W5W9  11  279.556 s  5.449 s
+  YYM7-3QP9-TJEH-VBD9  13  255.325 s  4.136 s
+
+问题四正式测试
+  SZ4E-B3GU-6F8M-VX4P  10  699.461 s  1.166 s
+  6P77-F2QX-E6GE-FB7Y  16  418.219 s  1.199 s
+  D7EY-MTV2-7Q3S-U7XT  10  746.149 s  1.423 s

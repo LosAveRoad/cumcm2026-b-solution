@@ -30,7 +30,7 @@
 2. 内圈：剩余 \(N_9\) 用连续残留剪枝，蛇形访问，位姿上扫完静默频道。`near` 就地清；`direction` 仅附近才打断。
 3. 若占用 \(<16\) 且静默频道仍在，走 \(R_{12}\) 开圆。占用 \(=16\) 可提前停网。
 4. 已听未清频道走一条服务 TSP。保扇形短步，`no_signal` 换侧。\(R_{\mathrm{sec}}\le 20\) 圆心清除。
-5. `/exit`。禁止正式测试。动作上限约 \(900\)。
+5. `/enter` 后 `mixed=True`。动作上限约 \(900\)。`/exit`。
 
 ## 过门指标
 
@@ -40,7 +40,15 @@
 - `U3UH-8T3Y-3TSU-Q2A5` \(12/12\)（\(4+8\)）均时 \(617.168\,\mathrm{s}\)、路程 \(27.3\,\mathrm{km}\)
 - `U9B5-CN4M-ZBEN-Y3JH` \(11/11\)（\(8+3\)）均时 \(718.879\,\mathrm{s}\)、路程 \(30.9\,\mathrm{km}\)
 
-合计 \(19595.949\,\mathrm{s}/39\) 源，合并不配对 \(502.460\,\mathrm{s}/\)源，平均路程 \(25.1\,\mathrm{km}\)。不得抄入正式测试表。Twin 8 世界全清均时 \(580.7\,\mathrm{s}\) 只作诊断。实现：`artifacts/experiments/bearing_chase/q4_explore/selected/searcher.py`。
+合计 \(19595.949\,\mathrm{s}/39\) 源，合并不配对 \(502.460\,\mathrm{s}/\)源，平均路程 \(25.1\,\mathrm{km}\)。不得抄入正式测试表。Twin 8 世界全清均时 \(580.7\,\mathrm{s}\) 只作诊断。
+
+正式测试（队号 202617201069，三场机会用完）。完成弹窗不给出总数。清除个数与平均时间为 HTTP `/clear` 成功次数及虚拟时间之比；程序运行时间为 `real_timestamp_ms` 之差。
+
+- `SZ4E-B3GU-6F8M-VX4P` 清除 10，均时 \(699.461\,\mathrm{s}\)，程序运行 \(1.166\,\mathrm{s}\)
+- `6P77-F2QX-E6GE-FB7Y` 清除 16，均时 \(418.219\,\mathrm{s}\)，程序运行 \(1.199\,\mathrm{s}\)
+- `D7EY-MTV2-7Q3S-U7XT` 清除 10，均时 \(746.149\,\mathrm{s}\)，程序运行 \(1.423\,\mathrm{s}\)
+
+合计 HTTP 清除 36、虚拟时间 \(21147.610\,\mathrm{s}\)，合并不配对 \(587.434\,\mathrm{s}\)/已清。第二场占用 16、均时较低，与提前停外环一致。实现：`artifacts/experiments/bearing_chase/searcher.py`（`mixed=True`）。
 
 ## 限度
 
