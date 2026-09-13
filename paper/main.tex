@@ -158,48 +158,39 @@ $A_{\max}$ & 检测与清除动作次数上限，取900 & --- \\
 \end{tabular}
 \end{center}
 
+\clearpage
 \section{数据预处理}
 
-\subsection{附件口径与字段}
+本题没有现成的干扰源坐标。附件只说明模拟器怎样通信、一次动作花多少虚拟时间。后面各问用到的常数整理在表\ref{tab:protocol}里，不改写题面里的任何一个数。
 
-本题没有问题一的站点坐标表，也没有可直接读取的源位置。附件1、附件2给出模拟器的通信协议、动作语义与测试窗口，属于接口说明而不是观测样本。预处理的任务因此是把题面常数、接口时间模型和几何约束整理成可复用的参数表，并冻结数据摘要，而不是做缺失插补。后续定量结果均在该冻结附件上复现。\footnote{数据集摘要哈希为\path{sha256:50bf04217eb3e8e7d3ce8b4a84f228b46dcfd93eebae187b443adb7724b2440e}。}
-
-表\ref{tab:protocol}列出从题面与附录抽取的常数。有效接收半径是区间而不是单值，检测点与第二个检测点的设计必须在区间两端都可解释。清除半径与近场阈值是硬约束：前者决定一次\texttt{/clear}的成功圆盘，后者决定何时放弃示向度、直接光学清除。
-
-\begin{table}[htbp]
+\begin{table}[!ht]
 \centering
-\caption{题面与附录抽取的协议常数}
+\caption{题面与附录给出的常数}
 \label{tab:protocol}
 \begin{tabular}{lrrl}
 \toprule
 量 & 取值 & 单位 & 来源 \\
 \midrule
-场地半径 $R_A$ & 1800 & m & 题面 \\
-示向度半误差 $\varepsilon$ & 1 & 度 & 附录2 \\
+场地半径 & 1800 & m & 题面 \\
+示向度半误差 & 1 & 度 & 附录2 \\
 有效接收半径 & $[1000,1500]$ & m & 附录2 \\
-清除半径 $R_{\mathrm{clr}}$ & 20 & m & 附录2 \\
-近场阈值 $R_{\mathrm{near}}$ & 5 & m & 附录2 \\
-行进速度 $v$ & 5 & m/s & 附录2 \\
-换台时间 & 1 & s & 附录2 \\
-检测时间 & 5 & s & 附录2 \\
-光学精定位 & 3 & s & 附录2 \\
-激光清除 & 2 & s & 附录2 \\
+清除半径 & 20 & m & 附录2 \\
+近场阈值 & 5 & m & 附录2 \\
+行进速度 & 5 & m/s & 附录2 \\
+换台、检测、光学、激光 & $1,5,3,2$ & s & 附录2 \\
 频道数 & 20 & --- & 附录1 \\
 源个数 & $[10,16]$ & --- & 问题三、四 \\
-坐标分量绝对值上限 & $2\times 10^6$ & m & 附录3 \\
-虚拟时间上限 & 100 & h & 附录3 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{尺度一致性与质量控制}
+场地半径1800 m。有效接收半径事先不知道，只知道在1000 m到1500 m之间：布置检测点时按1000 m保证听得到，讨论能不能听见时再看1500 m这一头，不用中间值代替。走到距离干扰源不超过20 m就可以激光清除；不超过5 m且在覆盖角内时测向机给不出示向度，可以直接清除。这几个长度从小到大是$5<20<1000\le 1500<1800$。机器狗每秒走5 m，走200 m大约要40 s，检测一次5 s，光学精确定位3 s，激光清除2 s，换台1 s，所以时间主要花在走路，检测点不必过密。
 
-如图\ref{fig:radii}所示，五类半径画在同一圆心上：近场5 m和清除20 m相对于场地几乎是一个点。这表明搜索阶段的主要矛盾是“听得到”，局部化阶段的主要矛盾才是“圆得足够小”。如图\ref{fig:constline}所示，同一组半径排在对数坐标上，尺度链
-\[
-R_{\mathrm{near}}<R_{\mathrm{clr}}<R_{\mathrm{eff}}^{\min}\le R_{\mathrm{eff}}^{\max}<R_A,
-\]
-即$5<20<1000\le 1500<1800$依次成立。该链在题面中全部给定，预处理只做完备性核对，不改写任一端点。
+模拟器每次检测会告诉机器狗：有示向度、已经很近、或者听不到。示向度只给方向、不给距离；已经很近表示不超过5 m。听不到在全向时多半是太远或没进这个频道，在定向时还可能是站在背面。清没清掉只能看清除指令的返回，不能从示向度反推。演练结束时窗口给出干扰源总数，因而可以算清除比例；正式测试不给总数，题目表1只报告清除个数和平均时间。每次动作等上一次返回再发下一次。
+\FloatBarrier
 
+% 软删除：尺度图与接口表，压缩本节至一页
+\iffalse
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.72\textwidth]{figures/eda_radii.png}
@@ -214,8 +205,6 @@ R_{\mathrm{near}}<R_{\mathrm{clr}}<R_{\mathrm{eff}}^{\min}\le R_{\mathrm{eff}}^{
 \label{fig:constline}
 \end{figure}
 
-如图\ref{fig:timecomp}所示，一次典型动作的虚拟时间中，行进200 m需要40 s，检测5 s，光学3 s，激光2 s，换台1 s。这表明移动项通常主导虚拟时钟，检测点不宜过密，靠近清除时应沿用已有示向度。如图\ref{fig:protorange}所示，长度量在对数坐标下拉开：近场与清除远小于接收半径，场地半径最大。预处理不把接收区间用中点代替，而是在覆盖论证中取1000 m，在可听上界中取1500 m。
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.82\textwidth]{figures/eda_time_components.png}
@@ -229,10 +218,6 @@ R_{\mathrm{near}}<R_{\mathrm{clr}}<R_{\mathrm{eff}}^{\min}\le R_{\mathrm{eff}}^{
 \caption{协议长度量的对数对照：仅有效接收半径为区间。}
 \label{fig:protorange}
 \end{figure}
-
-\subsection{接口语义与标签口径}
-
-模拟器通过HTTP返回\texttt{direction}、\texttt{near}、\texttt{no\_signal}以及清除结果。表\ref{tab:api}归纳四类指令的时钟含义。\texttt{direction}只提供扇形轴，不提供距离。\texttt{near}表示距离不超过5 m且在覆盖角内。\texttt{no\_signal}在全向情形可解释为超距或未进入该频道；在定向情形还可能是扇形背面。清除成功与否不能从示向度反推，只能由\texttt{/clear}的返回判定。问题三、问题四的“被清除个数比例”和“平均定位清除时间”是模拟器窗口上的统计，不是附件中的既有列。演练结束时窗口给出干扰源总数，因而比例可算；正式测试不给出总数，表1只报告清除个数与平均时间。
 
 \begin{table}[htbp]
 \centering
@@ -249,8 +234,7 @@ R_{\mathrm{near}}<R_{\mathrm{clr}}<R_{\mathrm{eff}}^{\min}\le R_{\mathrm{eff}}^{
 \bottomrule
 \end{tabular}
 \end{table}
-
-每次动作使用新的请求编号，串行等待上一次返回后再发下一次；仅在重试同一中断请求时复用编号。坐标分量绝对值不得超过$2\times 10^6$ m，虚拟时间上限为100 h。实现细节见附录。
+\fi
 
 \section{问题一：交会定位区域的直径与覆盖圆}
 
