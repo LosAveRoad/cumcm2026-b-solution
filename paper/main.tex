@@ -136,68 +136,24 @@ r\in[800,1300]\,\mathrm{m},\qquad |t|\in[459,845]\,\mathrm{m}
 \clearpage
 \section{符号说明}
 
-几何与运动学符号如下。
+其余符号在首次出现时随文说明。
 
 \begin{center}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.26\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}p{0.10\textwidth}@{}}
+\begin{tabular}{lll}
 \toprule
 符号 & 含义 & 单位 \\
 \midrule
-$S_i=(x_i,y_i)$ & 第$i$个检测点 & m \\
+$S_i$ & 第$i$个检测点 & m \\
 $\theta_i$ & 在$S_i$测得的示向度 & 度 \\
-$\varepsilon$ & 示向度半误差，题设为$1$ & 度 \\
-$W(S,\theta;\varepsilon)$ & 以检测点$S$为顶点、示向度$\theta$为中线、左右各偏$\varepsilon$的扇形 & --- \\
-$n_\pm$ & 该扇形左右边界指向内部的单位法向 & --- \\
-$\Omega$ & 定位区域，即各次示向度扇形的公共部分 & --- \\
-$D$ & $\mathrm{diam}(\Omega)$ & m \\
-$R_{\mathrm{sec}}$ & $\Omega$的最小包围圆半径 & m \\
-$R_A$ & 场地半径 & m \\
+$\Omega$ & 定位区域 & --- \\
+$D$ & 定位区域直径 & m \\
+$R_{\mathrm{sec}}$ & 包住定位区域的最小圆半径 & m \\
 $R_{\mathrm{eff}}$ & 有效接收半径 & m \\
-$R_{\mathrm{clr}}$ & 清除半径 & m \\
-$R_{\mathrm{near}}$ & 近场无示向度阈值 & m \\
-$v$ & 机器狗速度 & m/s \\
-$T_{\mathrm{sw}},T_{\mathrm{det}}$ & 换台时间、检测时间 & s \\
-$T_{\mathrm{opt}},T_{\mathrm{las}}$ & 光学精定位、激光清除 & s \\
-$\psi$ & 两站中心线在目标处的交角 & 度 \\
-$r,t$ & 第二站轴向距离、横向偏移 & m \\
-$u_{\theta},v_{\theta}$ & 示向度单位向量及其左转法向 & --- \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-检测、覆盖与清除符号如下。
-
-\begin{center}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.26\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}p{0.10\textwidth}@{}}
-\toprule
-符号 & 含义 & 单位 \\
-\midrule
-$c$ & 频道编号 & --- \\
-$N$ & 干扰源个数 & --- \\
-$H$ & 定向源朝向 & 度 \\
-$N_{\mathrm{scout}}$ & 检测点个数 & --- \\
-$N_9$ & 问题三原点加8个环上点的9个检测点 & --- \\
-$R_{12}$ & 半径2000 m上均匀分布的12个外环检测点 & --- \\
-$\mathcal{N}$ & 问题四检测点 $N_9\cup R_{12}$ & --- \\
-$\rho$ & 场地内到9个检测点最近距离的最大值 & m \\
-$d_{\mathrm{mid}}$ & 场地边界中缝到最近外环点的距离 & m \\
-$\Delta\theta$ & 源与最近外环点的方位差，至多$15^\circ$ & 度 \\
-$S^\star$ & $R_{12}$中方位最近的点 & m \\
-$\mathrm{Res}$ & 定向源听不到的情形：附近检测点都在背面 & --- \\
-$\mathrm{Res}_{\mathrm{cont}}$ & 全向情形下尚未被听到的可能位置 & --- \\
-$K_Q$ & 检测点$Q$的1000 m圆与场地的公共部分 & --- \\
-$\gamma$ & $\cos(\pi/8)$，9盘覆盖证明中的角平分余弦 & --- \\
-$\tau$ & 原点与环上点到角平分线等距处的半径 $1000/(2\gamma)$ & m \\
-$r_{\mathrm{ray}}$ & 轴上弦长清除半径界：$P$满足$\|SP\|=\|SG\|=r$时，对一切$|\alpha|\le 1^\circ$保证命中当且仅当$r\le 20/(2\sin 0.5^\circ)$ & m \\
-$\Delta_{\mathrm{edge}}$ & 边上顺路插入的额外路程 & m \\
-$I(p)$ & 共享第二个检测点对若干$2^\circ$扇形的期望对数行列式 & --- \\
-$u_H$ & 定向源朝向单位向量 & --- \\
-$\eta_1$ & 一次清除指示：$D\le 40$ m且以直径为直径的圆覆盖，或$R_{\mathrm{sec}}\le 20$ m & --- \\
-$R_{\mathrm{hear}}$ & 圆心再测半径，取最小有效接收半径1000 & m \\
-$R_{\mathrm{hex}}$ & 六邻点尝试半径80，不是80 m盘的覆盖半径 & m \\
-$N_{\mathrm{true}},N_{\mathrm{clr}}$ & 干扰源总数、被清除个数 & --- \\
-$A,A_{\max}$ & 已发出的检测与清除动作次数及其上限，上限取900 & --- \\
-$p_{\mathrm{hear}}$ & 第二个检测点对扇形内样本的可听比例 & --- \\
+$r,t$ & 第二个检测点的轴向距离、横向偏移 & m \\
+$N_9$ & 原点加8个环上点，共9个检测点 & --- \\
+$R_{12}$ & 半径2000 m上的12个外环检测点 & --- \\
+$\rho$ & 场地内到$N_9$最近距离的最大值 & m \\
+$A_{\max}$ & 检测与清除动作次数上限，取900 & --- \\
 \bottomrule
 \end{tabular}
 \end{center}
