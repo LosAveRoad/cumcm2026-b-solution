@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Callable
 
-from jianmo.b_sim.geometry import q3_omni_scouts, q4_certainty_scouts
+from jianmo.b_sim.geometry import q3_omni_scouts
 
 from geom import (
     ARENA_R,
@@ -344,12 +344,35 @@ def pose_covers_scout(
     return rho <= r_hear + _RHO_ULP
 
 
+def q4_detection_inner() -> list[tuple[float, float]]:
+    """Q3 9-disk. Omni covering radius ρ≈956.05 m < 1000 m."""
+    return q3_omni_scouts()
+
+
+def q4_detection_outer() -> list[tuple[float, float]]:
+    """12-point ring at r=2000 m (angular spacing 30°).
+
+    For g on |g|=1800 at a mid-angle, nearest outer S* has Δθ≤15° and
+    ||S*-g|| = sqrt(2000²+1800²-2·2000·1800·cos 15°) ≈ 534.2 m < 1000 m.
+    """
+    return ring_points(12, 2000.0, phase_rad=0.0)
+
+
 def q4_scouts() -> list[tuple[float, float]]:
-    # Discovery certificate: triangular lattice, covering radius ρ=s/√3<500 m.
-    # For every source g and heading u, q=g+500u has a lattice point p with
-    # ||p-q||≤ρ, hence ||p-g||≤a+ρ<1000 and (p-g)·u≥a-ρ>0. Time layer:
-    # nearest remaining silent-channel scout; fallback is the remaining lattice.
-    return q4_certainty_scouts()
+    """Q4 detection net: every source heard under named hypotheses; not ∀u.
+
+    引理（混合源检测，非 ∀u 朝向覆盖）. 网 N = N_9 ∪ R_12，N_9 为问题三
+    9 盘，R_12 为半径 2000 m 的 12 等分环。
+    若源为全向：完成 N_9 后必听，当且仅当 ρ(N_9)≈956.05<1000。
+    若源为定向：听到当且仅当存在 S∈N 使 ||S-g||≤R_eff 且 (S-g)·u≥0。
+    若 g∈D(0,1800)：最近外环点 S* 满足 Δθ≤15°，||S*-g|| 在边界中缝取
+    最大 ≈534.2 m<1000，故每个边界位置都有外环点落在距离盘内；若
+    (S*-g)·u≥0（含径向外指）则该定向源被听到。
+    残留 Res={(g,u): N ∩ disk(g,1000) 落在开背瓣}。不是 ∀g∀u，37 点
+    ρ<500 格网不是本时间层证书。占用达 16 则剩余静默频道为空。
+    单次 no_signal 不能清空频道。
+    """
+    return _unique_sites(q4_detection_inner() + q4_detection_outer(), tol=1.0)
 
 
 # Q4 mixed covering-salesman (SE(2) residual). Omni mixed=False does not use these.
@@ -2998,43 +3021,15 @@ class Searcher:
             return extra
         return planned
 
-    def _q4_time_candidates(self) -> list[tuple[float, float]]:
-        """Sparse listen poses: 9-net (all omni) plus outer rings for outward lobes.
-
-        Robot may stand outside D(0,1800). Sources cannot. No 37-lattice tour.
-        """
-        pts: list[tuple[float, float]] = []
-        for p in q3_scouts():
-            pts.append(p)
-        rings = (
-            (1250.0, 8, 0.40),
-            (1650.0, 8, 0.0),
-            (2000.0, 10, 0.31),
-            (2300.0, 12, 0.0),
-            (2550.0, 10, 0.31),
-        )
-        for r, n, phase in rings:
-            for k in range(n):
-                ang = phase + 2.0 * math.pi * k / n
-                pts.append((r * math.cos(ang), r * math.sin(ang)))
-        return _unique_sites(pts, tol=40.0)
-
-    def _q4_leftover_sub(self, cap: int = 2400) -> list[tuple]:
-        leftover = self._q4_leftover_samples()
-        if len(leftover) <= cap:
-            return leftover
-        step = max(1, (len(leftover) + cap - 1) // cap)
-        return leftover[::step]
-
-    def _q4_ipp_scan(self, pt: tuple[float, float]) -> None:
+    def _q4_listen(self, pt: tuple[float, float]) -> None:
+        """Silent leftover channels at one detection-net pose. No interrupt-chase."""
         silent = self._silent_channels()
         if not silent:
             return
-        if any(hypot(pt, d) <= 25.0 for d in self.discovery_stations):
+        if any(hypot(pt, d) <= 20.0 for d in self.discovery_stations):
             return
         self.scan_point(pt, silent, chase=False)
         self._mark_discovery(pt)
-        self._q4_visited.append(pt)
         self.n_path_scans += 1
         for ch in list(self.fixes.keys()):
             if self._too_many() or ch in self.cleared:
@@ -3054,8 +3049,8 @@ class Searcher:
             if body.get("measure_result") == "near":
                 self.clear_at(pt[0], pt[1], ch)
 
-    def _q4_chase_cheap(self) -> None:
-        """Clear nearby / certified sources during covering. Far G's wait for TSP."""
+    def _q4_nearby_chase(self) -> None:
+        """Clear only nearby G during covering. Far sources wait for the service TSP."""
         here = (self.x, self.y)
         pending = [c for c in list(self.fixes.keys()) if c not in self.cleared]
         pending.sort(key=lambda c: hypot(self._q4_ghat(c) or here, here))
@@ -3065,117 +3060,89 @@ class Searcher:
             ghat = self._q4_ghat(ch)
             if ghat is None:
                 continue
-            dg = hypot(ghat, here)
-            cert = False
-            poly = self._poly_for(ch)
-            if len(poly) >= 3:
-                sec = smallest_enclosing_circle(poly)
-                if sec.radius <= R_CLEAR + 1e-6:
-                    cert = True
-            if not (cert or dg <= NEARBY_CERT_M):
+            if hypot(ghat, here) > NEARBY_CERT_M:
                 continue
             self.chase(ch)
             here = (self.x, self.y)
-            if self._silent_channels() and self._q4_pose_hits_leftover(here):
-                self._q4_ipp_scan(here)
+            if self._silent_channels():
+                self._q4_listen(here)
             self._service_certified_nearby(max_walk=NEARBY_CERT_M)
 
-    def _q4_best_ipp(
-        self, cands: list[tuple[float, float]], leftover: list[tuple]
-    ) -> tuple[tuple[float, float], float, int] | None:
+    def _q4_pick_inner(self) -> tuple[float, float]:
+        """Origin first, then CCW serpentine on the 8-ring."""
+        scouts = self.remaining_scouts
+        for s in scouts:
+            if hypot(s) < 1.0:
+                return s
         here = (self.x, self.y)
-        n_sil = max(1, len(self._silent_channels()))
-        ranked: list[tuple[float, tuple[float, float], int]] = []
-        extra: list[tuple[float, float]] = list(cands)
-        self._prune_scouts()
-        for scout in list(self.remaining_scouts):
-            extra.append(self._covering_waypoint(scout))
-        extra = _unique_sites(extra, tol=35.0)
-        for pt in extra:
-            if any(hypot(pt, d) <= 70.0 for d in self.discovery_stations):
-                continue
-            n_hit = 0
-            for g, u, _q, _c in leftover:
-                if _pose_hears_gu(pt, g, u):
-                    n_hit += 1
-            omni_cover = 0
-            for scout in self.remaining_scouts:
-                if self._pose_covers_scout(pt, scout):
-                    omni_cover += 1
-            if n_hit <= 0 and omni_cover <= 0:
-                continue
-            walk = hypot(pt, here)
-            cost = max(4.0, walk / 5.0 + 6.0 * n_sil)
-            score = (2200.0 * omni_cover + float(n_hit)) / cost
-            ranked.append((score, pt, n_hit))
-        if not ranked:
-            return None
-        ranked.sort(key=lambda row: row[0], reverse=True)
-        score, pt, n_hit = ranked[0]
-        return pt, score, n_hit
+        ang0 = math.atan2(here[1], here[0])
+        return min(
+            scouts,
+            key=lambda p: (
+                (math.atan2(p[1], p[0]) - ang0) % (2.0 * math.pi),
+                hypot(p, here),
+            ),
+        )
 
-    def _q4_should_stop_cover(
-        self,
-        picked: tuple[tuple[float, float], float, int] | None,
-        leftover0: int,
-    ) -> bool:
-        if not self._silent_channels() or self._n_found() >= N_Q4_MAX:
-            return True
-        if picked is None:
-            return True
-        if self.n_net_visits >= 12:
-            return True
-        n = self._n_found()
-        leftover_n = len(self._q4_leftover_samples())
-        frac = leftover_n / float(leftover0) if leftover0 > 0 else 0.0
-        _pt, score, n_hit = picked
-        walk = hypot(_pt, (self.x, self.y))
-        # Occupancy is 10–16. Geometric leftover samples stay nonempty
-        # after every real source is found; extra covering then only
-        # scans empty silent channels and raises the panel mean.
-        if n >= 10:
-            return True
-        return False
-
-    def _q4_cover_loop(
-        self,
-        cands: list[tuple[float, float]],
-        *,
-        max_visits: int,
-        leftover0: list[int],
-        finish_omni: bool = False,
-    ) -> None:
-        while not self._too_many() and self.n_net_visits < max_visits:
-            if not self._silent_channels():
-                return
-            if finish_omni:
-                self._prune_scouts()
-                if not self.remaining_scouts:
-                    return
-            elif self._n_found() >= 10:
-                return
-            leftover = self._q4_leftover_sub()
-            if leftover0[0] <= 0:
-                leftover0[0] = max(1, len(self._q4_leftover_samples()))
-            picked = self._q4_best_ipp(cands, leftover)
-            if picked is None:
-                return
-            pose, _score, _n_hit = picked
+    def _q4_cover_inner(self) -> None:
+        """Finish the 9-disk continuum residual (every omni heard)."""
+        self.remaining_scouts = list(q4_detection_inner())
+        self._rho_cache.clear()
+        n_guard = 0
+        while (
+            not self._too_many()
+            and self._silent_channels()
+            and self._n_found() < N_Q4_MAX
+            and n_guard < 12
+        ):
+            n_guard += 1
+            self._prune_scouts()
+            if not self.remaining_scouts:
+                self._certificate_fallback_scouts()
+            if not self.remaining_scouts:
+                break
+            scout = self._q4_pick_inner()
+            pose = self._covering_waypoint(scout)
             self.n_net_visits += 1
-            if hypot(pose) > ARENA_R + 50.0:
-                self.n_csp_visits += 1
-            self._q4_ipp_scan(pose)
-            self._q4_chase_cheap()
+            self._q4_listen(pose)
+            if not any(hypot(scout, v) <= 1e-6 for v in self._q4_visited):
+                self._q4_visited.append(scout)
+            self._q4_nearby_chase()
+            self._prune_scouts()
+
+    def _q4_cover_outer(self) -> None:
+        """Circular tour of R_12. Completes the detection net; not ∀u."""
+        if not self._silent_channels() or self._n_found() >= N_Q4_MAX:
+            return
+        ring = q4_detection_outer()
+        here = (self.x, self.y)
+        i0 = min(range(len(ring)), key=lambda i: hypot(ring[i], here))
+        n = len(ring)
+        cw = ring[(i0 - 1) % n]
+        ccw = ring[(i0 + 1) % n]
+        step = 1 if hypot(ccw, here) <= hypot(cw, here) else -1
+        order = [ring[(i0 + step * k) % n] for k in range(n)]
+        for pt in order:
+            if (
+                self._too_many()
+                or not self._silent_channels()
+                or self._n_found() >= N_Q4_MAX
+            ):
+                return
+            if any(hypot(pt, d) <= 80.0 for d in self.discovery_stations):
+                continue
+            self.n_net_visits += 1
+            self.n_csp_visits += 1
+            self._q4_listen(pt)
+            self._q4_visited.append(pt)
+            self._q4_nearby_chase()
 
     def _run_mixed(self) -> None:
-        """Two-phase time hunt. No ∀g∀u lattice shield.
+        """Detection net N_9 ∪ R_12. Nearby-only interrupt; one end service TSP.
 
-        Inner 9-net (all omni) with nearby-only interrupt, then one service
-        TSP of heard G's. If occupancy is still <10, a few outer probes for
-        outward lobes, then service again. Far G-hats are not chased during
-        covering (that rebuilt 20 km stars).
+        引理见 q4_scouts。全清除不是门禁。不把 37 点格网当时间层证书。
         """
-        self.remaining_scouts = list(q3_scouts())
+        self.remaining_scouts = []
         self.discovery_stations = []
         self._q4_visited = []
         self._q4_leftover = None
@@ -3183,24 +3150,10 @@ class Searcher:
         self.n_net_visits = 0
         self.n_csp_visits = 0
         self.n_savings_inserts = 0
-        all_cands = self._q4_time_candidates()
-        inner = [p for p in all_cands if hypot(p) <= 1100.0]
-        outer = [p for p in all_cands if hypot(p) > 1100.0]
-        leftover0 = [0]
-        self._q4_cover_loop(
-            inner, max_visits=6, leftover0=leftover0, finish_omni=True
-        )
+        self._rho_cache = {}
+        self._q4_cover_inner()
+        self._q4_cover_outer()
         self._service_pending_tsp()
-        if (
-            not self._too_many()
-            and self._silent_channels()
-            and self._n_found() < 10
-        ):
-            self.remaining_scouts = []
-            self._q4_cover_loop(
-                outer, max_visits=self.n_net_visits + 3, leftover0=leftover0
-            )
-            self._service_pending_tsp()
         self._chase_open_fixes()
 
     def search_after_enter(self) -> None:

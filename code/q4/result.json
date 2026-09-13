@@ -1,0 +1,89 @@
+{
+  "schema_version": "jianmo.q3_explore.run.v0",
+  "direction_id": "q4_m1",
+  "slot": "m1",
+  "no_more_room": true,
+  "mean_s": 502.46,
+  "n_episodes": 3,
+  "full_clear": true,
+  "walk_m": 25126.6,
+  "notes": "Question 4 method 1. Never 正式. Mixed=True only; Q3 mixed=False untouched. Replaced the 37-point ρ<500 ∀g∀u lattice (live unpaired 797.1 s / 33.1 km) with detection net N=N_9 ∪ R_12. 引理（混合源检测，非 ∀u）：若源为全向，完成问题三 9 盘后必听，当且仅当 ρ(N_9)≈956.05<1000；若源为定向，听到当且仅当存在 S∈N 使 ||S-g||≤R_eff 且 (S-g)·u≥0；若 g∈D(0,1800)，最近外环点 S*∈R_12（r=2000 m，12 等分，Δθ≤15°）满足 ||S*-g|| 在边界中缝最大 ≈534.2 m<1000，故每个边界位置都有外环点落在距离盘内，若 (S*-g)·u≥0（含径向外指）则该定向源被听到。残留 Res={(g,u): N ∩ disk(g,1000) 落在开背瓣}。占用达 16 则剩余静默频道为空。单次 no_signal 不能清空频道。时间层：内圈 9 盘连续残留蛇形，仅附近追逐；外环 12 点开圆巡回；全程结束后一条服务 TSP。全清除不是门禁。官方模拟器问题4演练三次均全清 n_dir≥1：m1-01 94W6-GKZD-JQQR-WHHE 16/16 13omni+3dir 267.641 s / 17.2 km（占用 16 提前停网）；m1-02 U3UH-8T3Y-3TSU-Q2A5 12/12 4+8 617.168 s / 27.3 km；m1-03 U9B5-CN4M-ZBEN-Y3JH 11/11 8+3 718.879 s / 30.9 km。合计 19595.949 s / 39 源 = 502.460 s，平均路程 25.1 km。Twin 8/8 全清均时 580.7 s / 29.5 km（诊断，非记分）。墙：n_found<16 时必须走完 R_12（空静默频道的覆盖税，n=11 时约 31 km）；再砍只能少听定向、放弃该引理。Never 正式.",
+  "lemma": {
+    "name": "混合源检测，非 ∀u 朝向覆盖",
+    "net": "N_9 ∪ R_12",
+    "hypotheses": [
+      "若源为全向：完成 N_9 后必听，当且仅当 ρ(N_9)≈956.05 m<1000 m",
+      "若源为定向：听到当且仅当存在 S∈N 使 ||S-g||≤R_eff 且 (S-g)·u≥0",
+      "若 g∈D(0,1800)：最近外环点 S* 满足 Δθ≤15°，||S*-g|| 边界中缝最大 ≈534.2 m<1000 m；若 (S*-g)·u≥0（含径向外指）则听到",
+      "若占用达 16：剩余静默频道为空"
+    ],
+    "residual": "Res={(g,u): N ∩ disk(g,1000) 落在开背瓣}。不是 ∀g∀u。37 点 ρ<500 格网不是本时间层证书。"
+  },
+  "files": [
+    "artifacts/experiments/bearing_chase/q4_explore/m1/searcher.py",
+    "artifacts/experiments/bearing_chase/q4_explore/selected/searcher.py",
+    "artifacts/experiments/bearing_chase/q4_explore/m1/twin_eval.json",
+    "artifacts/experiments/bearing_chase/q4_explore/m1/episodes/m1-01.json",
+    "artifacts/experiments/bearing_chase/q4_explore/m1/episodes/m1-01.jsonl",
+    "artifacts/experiments/bearing_chase/q4_explore/m1/episodes/m1-02.json",
+    "artifacts/experiments/bearing_chase/q4_explore/m1/episodes/m1-02.jsonl",
+    "artifacts/experiments/bearing_chase/q4_explore/m1/episodes/m1-03.json",
+    "artifacts/experiments/bearing_chase/q4_explore/m1/episodes/m1-03.jsonl"
+  ],
+  "episodes": [
+    {
+      "id": "m1-01",
+      "case_code": "94W6-GKZD-JQQR-WHHE",
+      "n_true": 16,
+      "n_cleared": 16,
+      "n_omni": 13,
+      "n_dir": 3,
+      "mean_s": 267.641,
+      "walk_m": 17191.3,
+      "virtual_time_s": 4282.259478,
+      "full_clear": true,
+      "policy": "detect_9net_r12_2000"
+    },
+    {
+      "id": "m1-02",
+      "case_code": "U3UH-8T3Y-3TSU-Q2A5",
+      "n_true": 12,
+      "n_cleared": 12,
+      "n_omni": 4,
+      "n_dir": 8,
+      "mean_s": 617.168,
+      "walk_m": 27255.1,
+      "virtual_time_s": 7406.016186,
+      "full_clear": true,
+      "policy": "detect_9net_r12_2000"
+    },
+    {
+      "id": "m1-03",
+      "case_code": "U9B5-CN4M-ZBEN-Y3JH",
+      "n_true": 11,
+      "n_cleared": 11,
+      "n_omni": 8,
+      "n_dir": 3,
+      "mean_s": 718.879,
+      "walk_m": 30933.4,
+      "virtual_time_s": 7907.672865,
+      "full_clear": true,
+      "policy": "detect_9net_r12_2000"
+    }
+  ],
+  "pooled": {
+    "n_sources": 39,
+    "virtual_time_s": 19595.948529,
+    "mean_s": 502.4602186923077,
+    "mean_walk_m": 25126.580886762407
+  },
+  "twin": {
+    "n_worlds": 8,
+    "n_full_clear": 8,
+    "mean_s": 580.7,
+    "mean_walk_m": 29517.4,
+    "mean_net_visits": 20.75
+  },
+  "searcher_hash": "sha256:6c3318c862a3be58fef63285575a5f81aa79c798d140778dc26af454e151b057",
+  "gui": "windows-computer-use MCP + cu_q4.py; windowTitle=无线电干扰源环境模拟器; clicked only 开始问题4演练测试 / 确认 / 返回演练测试; never 正式"
+}

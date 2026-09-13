@@ -1,8 +1,0 @@
-{
-  "schema_version": "jianmo.q3_explore.select.v0",
-  "slot": "w1",
-  "searcher": "artifacts/experiments/bearing_chase/q4_explore/selected/searcher.py",
-  "mean_s": 797.062,
-  "full_clear": true,
-  "why": "SE(2) residual covering salesman on mixed=True only; Q3 mixed=False is the frozen method-9 9-disk continuum residual. Discovery P=1 stays the triangular lattice s=850 m, ρ=s/√3≈490.75 m<500 m, a=500 m, 37 points in D(0,1800+a+ρ); a lattice city is dropped only when its exclusive leftover q-disk is already hit by a path-sensor /measure (lemma-near a−ρ, or a covering waypoint), with heading-slice restore and unused-lattice insert if a planned hop would leave a sample unheard. Official-simulator 问题4演练 3/3 UI full-clear n_dir≥1, pooled 27100.1 s / 34 sources = 797.062 s, mean walk 33.1 km (2YVR-2HZ2-JWQB-SAAC 10/10 3omni+7dir 932.944 s; NRNM-3JPC-3J6H-SJNB 13/13 11+2 754.335 s; S56P-5CS7-MF8W-46DT 11/11 10+1 724.028 s). Twin mixed 4/4 full-clear mean 791.0 s; paired seed 2026 718.3 s versus the same-instance 37-tour lattice 1147.7 s. The prior live 37-tour unpaired mean 1117.9 s is a different mix and a different time layer on the same certificate."
-}
