@@ -1,0 +1,123 @@
+{
+  "schema_version": "jianmo.q3_explore.run.v0",
+  "direction_id": "q4_sprint",
+  "slot": "sprint",
+  "no_more_room": true,
+  "mean_s": 318.128,
+  "n_episodes": 3,
+  "full_clear": false,
+  "walk_m": 15901.4,
+  "notes": "Threw the 37-lattice covering salesman (live 797s / 33km, ~31 lattice visits). Mixed=True only; Q3 mixed=False untouched. New time policy: two-phase sparse IPP — inner Q3 9-net residual (all omni, ρ≈956<1000) with nearby-only interrupt (dg≤280m), one service TSP of heard G-hats, then at most 3 outer rings if occupancy<10. No ∀g∀u lattice shield. Panel 平均定位清除时间 is virtual_time/n_cleared. Final-policy pooled s1-04+s1-05+s1-07: (3349.248+4439.881+4299.736)/ (12+13+13) = 318.128s, mean walk 15.9km. Per episode n_cleared/n_true: s1-01 10/10 7omni+3dir 446.074s (first IPP, leftover scans after occupancy 10 wasted ~1000s); s1-02 9/13 3+10 613.851s (defer-chase then long cover); s1-03 10/11 4+7 622.930s (680m G-hat interrupt rebuilt stars); s1-04 12/14 13+1 279.104s (two-phase service-after-inner); s1-05 13/13 1+12 341.529s full-clear dir-heavy; s1-06 7/11 3+8 741.281s (finish-all-9-net silent tax when only 4 heard); s1-07 13/15 14+1 330.749s (inner≤6 + 3 outer). Wall: 9-net covering + mixed 1-bearing laterals vs omniscient TSP-on-G ~150s / 9km (Q3 omni plateau ~257s). Further skip of remaining 9-net cells misses omni (s1-04/s1-07 2 misses). Denser outer / hunting until N=10 on silent leftover raises mean (s1-06). Next cut by clearing one nearby source is not the scoreboard. Never 正式.",
+  "files": [
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/searcher.py",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-01.json",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-01.jsonl",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-02.json",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-02.jsonl",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-03.json",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-03.jsonl",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-04.json",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-04.jsonl",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-05.json",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-05.jsonl",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-06.json",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-06.jsonl",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-07.json",
+    "artifacts/experiments/bearing_chase/q4_explore/sprint/episodes/s1-07.jsonl"
+  ],
+  "episodes": [
+    {
+      "id": "s1-01",
+      "case_code": "SCMR-GZ3T-WZVV-V4ZZ",
+      "n_true": 10,
+      "n_cleared": 10,
+      "n_omni": 7,
+      "n_dir": 3,
+      "mean_s": 446.074,
+      "walk_m": 13958.7,
+      "full_clear": true,
+      "policy": "sparse_ipp_no_lattice"
+    },
+    {
+      "id": "s1-02",
+      "case_code": "VT9R-AZ3Q-JAPX-JXZ4",
+      "n_true": 13,
+      "n_cleared": 9,
+      "n_omni": 3,
+      "n_dir": 10,
+      "mean_s": 613.851,
+      "walk_m": 20863.3,
+      "full_clear": false,
+      "policy": "sparse_ipp_stop10_defer_chase"
+    },
+    {
+      "id": "s1-03",
+      "case_code": "WWJX-PJ9Q-EWHM-ANYK",
+      "n_true": 11,
+      "n_cleared": 10,
+      "n_omni": 4,
+      "n_dir": 7,
+      "mean_s": 622.930,
+      "walk_m": 23366.5,
+      "full_clear": false,
+      "policy": "sparse_ipp_stop10_chase680"
+    },
+    {
+      "id": "s1-04",
+      "case_code": "ZYMZ-N5QR-HR2Y-H7H2",
+      "n_true": 14,
+      "n_cleared": 12,
+      "n_omni": 13,
+      "n_dir": 1,
+      "mean_s": 279.104,
+      "walk_m": 14051.2,
+      "full_clear": false,
+      "policy": "two_phase_inner_service_outer"
+    },
+    {
+      "id": "s1-05",
+      "case_code": "EU4V-7ZJY-RCJ2-39CZ",
+      "n_true": 13,
+      "n_cleared": 13,
+      "n_omni": 1,
+      "n_dir": 12,
+      "mean_s": 341.529,
+      "walk_m": 16189.4,
+      "full_clear": true,
+      "policy": "two_phase_finish_omni_then_outer"
+    },
+    {
+      "id": "s1-06",
+      "case_code": "R5SR-R2RH-VRC5-9YSW",
+      "n_true": 11,
+      "n_cleared": 7,
+      "n_omni": 3,
+      "n_dir": 8,
+      "mean_s": 741.281,
+      "walk_m": 18384.8,
+      "full_clear": false,
+      "policy": "two_phase_finish_omni_then_outer"
+    },
+    {
+      "id": "s1-07",
+      "case_code": "EHHJ-JZHB-SDXR-EEBG",
+      "n_true": 15,
+      "n_cleared": 13,
+      "n_omni": 14,
+      "n_dir": 1,
+      "mean_s": 330.749,
+      "walk_m": 17463.7,
+      "full_clear": false,
+      "policy": "two_phase_inner6_outer3"
+    }
+  ],
+  "pooled_final_policy": {
+    "ids": ["s1-04", "s1-05", "s1-07"],
+    "n_sources_cleared": 38,
+    "virtual_time_s": 12088.864,
+    "mean_s": 318.128,
+    "mean_walk_m": 15901.4
+  },
+  "searcher_hash": "sha256:e1ea880cc7494d6b4b4f7a6ba0b50e511ca97d05f84321a79f5379574f2fa170",
+  "gui": "windows-computer-use MCP; windowTitle=无线电干扰源环境模拟器; clicked only 开始问题4演练测试 / 确认 / 返回演练测试; never 正式"
+}

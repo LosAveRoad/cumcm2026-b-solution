@@ -1,0 +1,18 @@
+test_budget_and_deadline_never_claim_success (test_q3.Q3Tests.test_budget_and_deadline_never_claim_success) ... ok
+test_contraction_all_ranges_and_error_endpoints (test_q3.Q3Tests.test_contraction_all_ranges_and_error_endpoints) ... ok
+test_empty_and_budget_unknown (test_q3.Q3Tests.test_empty_and_budget_unknown) ... ok
+test_exact_boundary_and_nearby_distinct_centers (test_q3.Q3Tests.test_exact_boundary_and_nearby_distinct_centers) ... ok
+test_exit_rejection_is_reported (test_q3.Q3Tests.test_exit_rejection_is_reported) ... ok
+test_failed_certificate_is_not_success (test_q3.Q3Tests.test_failed_certificate_is_not_success) ... ok
+test_full_run_without_optional_pruning (test_q3.Q3Tests.test_full_run_without_optional_pruning) ... ok
+test_hexagon_slack_counterexamples (test_q3.Q3Tests.test_hexagon_slack_counterexamples) ... ok
+test_http_payload_contract_without_network (test_q3.Q3Tests.test_http_payload_contract_without_network) ... ok
+test_invalid_enter_duration_still_exits (test_q3.Q3Tests.test_invalid_enter_duration_still_exits) ... ok
+test_nearest_not_first (test_q3.Q3Tests.test_nearest_not_first) ... ok
+test_partial_rejected_scan_never_commits (test_q3.Q3Tests.test_partial_rejected_scan_never_commits) ... ok
+test_tsp_against_exhaustive (test_q3.Q3Tests.test_tsp_against_exhaustive) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.611s
+
+OK

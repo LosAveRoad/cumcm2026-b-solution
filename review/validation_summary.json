@@ -1,0 +1,175 @@
+{
+  "date": "2026-09-13",
+  "scope": "Q3 and related paper statements only",
+  "original_zip_sha256": "5642cb0797845611fe1852f6661e6749c2f82e6a1ad0771bcbf75ed809ce432d",
+  "pdf_sha256": "fc005f0a01137432d242f9b05533b51a8722df7b62dcaeb7a0de4ed6d2b44a80",
+  "paper_pages": 50,
+  "xelatex_exit_code": 0,
+  "unresolved_references": 0,
+  "overfull_boxes": 0,
+  "missing_glyphs": 0,
+  "q3_physical_pdf_pages_reviewed": [
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "related_physical_pdf_pages_reviewed": [
+    3,
+    5,
+    7,
+    8,
+    10,
+    47,
+    48,
+    50
+  ],
+  "unit_tests_passed": 13,
+  "offline_scenes": 48,
+  "offline_full_clear": 48,
+  "offline_action_range": [
+    150,
+    245
+  ],
+  "theoretical_action_bound": 294,
+  "official_simulator_runs_by_this_revision": 0,
+  "non_q3_code_files_verified_unchanged": [
+    "code/q1q2/experiment.py",
+    "code/q1q2/geom.py",
+    "code/q1q2/results.json",
+    "code/q1q2/sensitivity.py",
+    "code/q1q2/test_q2_axis_cover.py",
+    "code/q4_method1/result.json",
+    "code/q4_method1/searcher.py",
+    "code/q4_method1/select.json",
+    "code/q4_method2/result.json",
+    "code/q4_method2/searcher.py",
+    "code/shared/experiment.py",
+    "code/shared/geom.py",
+    "code/shared/rehearsal.py",
+    "code/src_jianmo_b_sim/geometry.py"
+  ],
+  "legacy_searcher_verified_byte_identical": true,
+  "changed_or_added_files": [
+    {
+      "path": "code/q3/certificates.py",
+      "status": "added",
+      "sha256": "66fe44c177d1582f92bb74376b62a9e9f4599c6e364b428daa141d8133f64bf9"
+    },
+    {
+      "path": "code/q3/detection_proof.json",
+      "status": "modified",
+      "sha256": "b61b55c670ce5b1116b2247d450001749023c785087f877a45692ca8cf3a08a4"
+    },
+    {
+      "path": "code/q3/detection_proof.md",
+      "status": "modified",
+      "sha256": "3ba1708f87e439b8ce8a1f067454114fb764582671a4278132548ece302bd525"
+    },
+    {
+      "path": "code/q3/offline_results.json",
+      "status": "added",
+      "sha256": "de824df63d45c737bd9ee2368da8985d703c9274cf4e2d8e0c095947e3c365b1"
+    },
+    {
+      "path": "code/q3/offline_validation.py",
+      "status": "added",
+      "sha256": "f39a77956efbec98cfd801bbdcd734f7304529c13574a69321a01163d5ccd6dc"
+    },
+    {
+      "path": "code/q3/README.md",
+      "status": "added",
+      "sha256": "a1970440c444852068b0db3445d4eb7ff03fa9850f08b448ec8187f6d83b9770"
+    },
+    {
+      "path": "code/q3/run_q3.py",
+      "status": "added",
+      "sha256": "f3b3c7fafed8579f0878edd88c245b1d07c401cfd8f681db8fd994a038d0719a"
+    },
+    {
+      "path": "code/q3/searcher.py",
+      "status": "modified",
+      "sha256": "b2e6ff506dc07c4afdf5eb0755cc4f78a3866b54242e694fa84a9d7cbac9c75c"
+    },
+    {
+      "path": "code/q3/searcher_legacy.py",
+      "status": "added",
+      "sha256": "3dd4a6429db7267b9bb7f703e99cb777429227257449a80f968009b7948c819f"
+    },
+    {
+      "path": "code/q3/sim_client.py",
+      "status": "added",
+      "sha256": "c971c89fd2db54a4dd8e55515ccb8a6141e8b84e34b7bf752e1296c98aa7a61f"
+    },
+    {
+      "path": "code/q3/test_q3.py",
+      "status": "added",
+      "sha256": "03c3d6ab30275523ebb15910b3b5621f7c113736e9ffe310320632b41c0de50f"
+    },
+    {
+      "path": "finalize_review.py",
+      "status": "added",
+      "sha256": "3aea1078c850284e95868cc050b931a53f7fe6e45a076e4b79fdd898dc5a0ab2"
+    },
+    {
+      "path": "paper/abstract-body.tex",
+      "status": "modified",
+      "sha256": "589546ff8f5ca45fbd4f02c6de35995395885c30e918efa6bea893cd2d60e3b2"
+    },
+    {
+      "path": "paper/AI工具使用详情.tex",
+      "status": "modified",
+      "sha256": "431171ca2ac1e22a29e6da9970cdca16eb3b30db708760a80f5ac13f1e95c154"
+    },
+    {
+      "path": "paper/citation_map.json",
+      "status": "modified",
+      "sha256": "04f034784608a6532489c4b964024b7a6839ae2b485bfd829a3cf2afe331a8a6"
+    },
+    {
+      "path": "paper/cumcmthesis.cls",
+      "status": "added",
+      "sha256": "630968bcc97a5bfb296ae834298c28d1768f96b762e81bd8d267312c0a14bb92"
+    },
+    {
+      "path": "paper/main.pdf",
+      "status": "modified",
+      "sha256": "fc005f0a01137432d242f9b05533b51a8722df7b62dcaeb7a0de4ed6d2b44a80"
+    },
+    {
+      "path": "paper/main.tex",
+      "status": "modified",
+      "sha256": "3770601fe9b2a13a4b58eac0978b7ec82dc88fdbd4a2fa91fea1efc787d793af"
+    },
+    {
+      "path": "paper/q3-body.tex",
+      "status": "added",
+      "sha256": "c16e079002d472006b6700b3b4fbf826700109e1430fdb9525e7dd8a0064e511"
+    },
+    {
+      "path": "paper/q3-validation-table.tex",
+      "status": "added",
+      "sha256": "39c0a6e794e3449cf24d644366012b5064154c4741c8e1943b75e31f9df02e47"
+    },
+    {
+      "path": "Q3_REVIEW.md",
+      "status": "added",
+      "sha256": "6889c799c7fd9d61175d34f3bb243c349cd563484ffe238713986ac6b19956bc"
+    },
+    {
+      "path": "README.txt",
+      "status": "modified",
+      "sha256": "6d4251007530c699d0cbb0fbad3b18bc5f06b2af39643a805d1c29639871c684"
+    }
+  ],
+  "limitations": [
+    "No revised official rehearsal or formal logs",
+    "No global time-optimality claim",
+    "Real-time/network interruptions remain possible"
+  ]
+}

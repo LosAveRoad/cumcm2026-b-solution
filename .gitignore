@@ -1,0 +1,13 @@
+# Generated TeX and Python artifacts
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.synctex.gz
+paper/build-*.txt
+paper/main-review-text.txt
+paper/q3-qa-*.png
+code/**/__pycache__/
+code/q3/test-results.txt
+code/q3/*.pyc
+review/*.png
