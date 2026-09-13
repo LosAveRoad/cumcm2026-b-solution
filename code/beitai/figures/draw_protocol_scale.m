@@ -1,0 +1,1 @@
+f=figure('Name','Fig02 protocol radii','Color','white'); t=linspace(0,2*pi,361); hold on; plot(1800*cos(t),1800*sin(t),'k'); plot(1500*cos(t),1500*sin(t),'b'); plot(1000*cos(t),1000*sin(t),'r'); plot(20*cos(t),20*sin(t),'g'); plot(5*cos(t),5*sin(t),'k--'); axis equal; xlabel('x (m)'); ylabel('y (m)'); title('协议半径 1800, 1500, 1000, 20, 5 m'); legend('场地','接收上界','接收下界','清除','近场');

@@ -1,0 +1,1 @@
+f=figure('Name','Fig10 Q1 diameter','Color','white'); a=readmatrix('/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/inputs/paper/tables/q1_mc_sample.csv'); histogram(a(:,2),12); xlabel('后验直径 (m)'); ylabel('频数'); title('Q1 400 行保存结果统计');

@@ -1,0 +1,5 @@
+endpoint,role,clock
+/enter,start,real+virtual start
+/measure,bearing,walk/5 + switch + 5s
+/clear,laser,walk/5 + 5s or 3s
+/exit,stop,end episode

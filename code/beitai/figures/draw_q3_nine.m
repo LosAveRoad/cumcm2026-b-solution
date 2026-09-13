@@ -1,0 +1,1 @@
+f=figure('Name','Fig17 Q3 nine disks','Color','white'); t=linspace(0,2*pi,361); plot(1800*cos(t),1800*sin(t),'k'); hold on; x=1000*cos((0:7)*pi/4); y=1000*sin((0:7)*pi/4); plot(x,y,'bo','MarkerFaceColor','b'); plot(0,0,'rs','MarkerFaceColor','r'); axis equal; xlabel('x (m)'); ylabel('y (m)'); title('Q3 九点侦听网与场地');

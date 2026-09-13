@@ -1,0 +1,57 @@
+\documentclass[UTF8]{ctexart}
+\begin{document}
+\section*{AI工具使用详情}
+\# AI工具使用详情
+
+本文件按全国大学生数学建模竞赛人工智能工具使用规定撰写。
+内容为阶段级摘要，不含 raw prompt、不含题面原文。
+
+- 工具名称：Grok Build 1.0.24
+- 控制面：Iteris（jianmo overlay）
+- 数值写门：jianmo NumericWriteGate（独立进程复现，非 LLM 盖章）
+- 工作区：`B-2026`
+- pack\_id：B-2026
+- dataset\_digest：sha256:50bf04217eb3e8e7d3ce8b4a84f228b46dcfd93eebae187b443adb7724b2440e
+- gate\_pass\_count：6
+
+\#\# 各阶段摘要
+
+\#\#\# S0\_ingest 读题 / 冻结附件
+- 是否使用生成式 AI：是
+- 核验：人工或程序哈希
+
+\#\#\# S1\_routes 提出正交方法路线
+- 是否使用生成式 AI：是
+- 核验：人工或程序哈希
+
+\#\#\# S2\_model 机理 / 假设 / 控制方程
+- 是否使用生成式 AI：是
+- 核验：人工或程序哈希
+
+\#\#\# S3\_numerics 数值实验与写门复现
+- 是否使用生成式 AI：是
+- 核验：经 NumericWriteGate / 人工核验
+
+\#\#\# S4\_sensitivity 灵敏度
+- 是否使用生成式 AI：是
+- 核验：经 NumericWriteGate / 人工核验
+
+\#\#\# S5\_paper 论文组装
+- 是否使用生成式 AI：是
+- 核验：人工或程序哈希
+
+\#\#\# S6\_disclose AI 使用声明
+- 是否使用生成式 AI：是
+- 核验：人工或程序哈希
+
+\#\# 声明
+
+参赛队对论文全部内容负责。原版本定量数字的来源按上述历史记录保留；本次Q3新增数字来自独立离线测试结果，未经过原版本写门，不应混称同一验证流程。
+本文件不包含模型原始对话。
+
+\section*{2026年9月13日 Q3修订补充}
+本次使用OpenAI Codex辅助审核Q3证明与代码，发现最近站分界、浮点剪枝、扫描完成状态和内接多边形可行集等问题；辅助提出并推导距离上界半步收缩方法，修改Q3实现与相关论文段落。
+
+验证包括13项回归测试、48个独立离线模型场景及XeLaTeX编译与页面检查。新增结果记录于\texttt{code/q3/offline\_results.json}，修订范围与局限记录于\texttt{Q3\_REVIEW.md}。历史演练数据保留并标注为旧策略，不作为修订代码的官方演练成绩。本次未运行官方模拟器演练或正式测试。
+
+\end{document}

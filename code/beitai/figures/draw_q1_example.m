@@ -1,0 +1,1 @@
+f=figure('Name','Fig09 Q1 example','Color','white'); p=[500 517.765156895;482.550251649 499.69541351;500 482.844387404;517.449748351 499.69541351]; plot([p(:,1);p(1,1)],[p(:,2);p(1,2)],'-o'); hold on; plot(500,500,'rx'); axis equal; xlabel('x (m)'); ylabel('y (m)'); title('Q1 正交例后验四边形'); legend('后验顶点','真源');

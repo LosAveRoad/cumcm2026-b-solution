@@ -1,0 +1,1 @@
+f=figure('Name','Fig22 spoke','Color','white'); plot([0 1000],[0 0],'k-'); hold on; plot([200 700 850],[0 0],'o'); xline(200,'--'); xline(700,'--'); xline(850,'--'); xlabel('轴向距离 (m)'); yticks([]); title('发现引理轴向剖面');

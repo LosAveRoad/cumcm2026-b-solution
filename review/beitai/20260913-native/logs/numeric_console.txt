@@ -1,0 +1,7 @@
+[91m错误使用函数 load
+只支持加载 mat 文件，请指定 '-mat' 参数加载该文件。
+
+位于文件 /Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/compute/run_numeric.m (第 7 行)
+f=fopen([W '/recomputed/q1_mc.txt'],'w'); x=load([W '/inputs/q1_original_inputs.txt']);
+
+[0m

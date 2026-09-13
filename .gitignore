@@ -11,3 +11,9 @@ code/**/__pycache__/
 code/q3/test-results.txt
 code/q3/*.pyc
 review/*.png
+
+# macOS metadata
+.DS_Store
+
+# Local build scratch space
+tmp/

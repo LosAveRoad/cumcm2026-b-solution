@@ -1,0 +1,146 @@
+[
+  {
+    "number": 1,
+    "stem": "framework",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_framework.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/framework.png"
+  },
+  {
+    "number": 2,
+    "stem": "eda_radii",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_eda_radii.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/eda_radii.png"
+  },
+  {
+    "number": 3,
+    "stem": "eda_constraint_line",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_eda_constraint_line.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/eda_constraint_line.png"
+  },
+  {
+    "number": 4,
+    "stem": "eda_time_components",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_eda_time_components.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/eda_time_components.png"
+  },
+  {
+    "number": 5,
+    "stem": "eda_protocol_ranges",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_eda_protocol_ranges.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/eda_protocol_ranges.png"
+  },
+  {
+    "number": 6,
+    "stem": "halfplane",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_halfplane.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/halfplane.png"
+  },
+  {
+    "number": 7,
+    "stem": "wedge_intersect",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_wedge_intersect.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/wedge_intersect.png"
+  },
+  {
+    "number": 8,
+    "stem": "jung_vs_diamond",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_jung_vs_diamond.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/jung_vs_diamond.png"
+  },
+  {
+    "number": 9,
+    "stem": "q1_example_polygon",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q1_example_polygon.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q1_example_polygon.png"
+  },
+  {
+    "number": 10,
+    "stem": "q1_mc_diameter",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q1_mc_diameter.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q1_mc_diameter.png"
+  },
+  {
+    "number": 11,
+    "stem": "q1_jung_ratio_area",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q1_jung_ratio_area.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q1_jung_ratio_area.png"
+  },
+  {
+    "number": 12,
+    "stem": "second_station",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_second_station.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/second_station.png"
+  },
+  {
+    "number": 15,
+    "stem": "q2_sensitivity",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q2_sensitivity.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q2_sensitivity.png"
+  },
+  {
+    "number": 16,
+    "stem": "q2_err_sweep",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q2_err_sweep.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q2_err_sweep.png"
+  },
+  {
+    "number": 17,
+    "stem": "q3_nine_disk",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q3_nine_disk.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q3_nine_disk.png"
+  },
+  {
+    "number": 18,
+    "stem": "q34_scout_nets",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q34_scout_nets.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q34_scout_nets.png"
+  },
+  {
+    "number": 20,
+    "stem": "directional_listen",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_directional_listen.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/directional_listen.png"
+  },
+  {
+    "number": 21,
+    "stem": "q4_directional_sector",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q4_directional_sector.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q4_directional_sector.png"
+  },
+  {
+    "number": 22,
+    "stem": "q4_silent_spoke",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q4_silent_spoke.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q4_silent_spoke.png"
+  },
+  {
+    "number": 23,
+    "stem": "q4_sector_chase",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q4_sector_chase.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q4_sector_chase.png"
+  },
+  {
+    "number": 24,
+    "stem": "q4_optical_grid",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q4_optical_grid.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q4_optical_grid.png"
+  },
+  {
+    "number": 25,
+    "stem": "q4_fullclear_bars",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q4_fullclear_bars.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q4_fullclear_bars.png"
+  },
+  {
+    "number": 26,
+    "stem": "q4_rehearsal_bars",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q4_rehearsal_bars.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q4_rehearsal_bars.png"
+  },
+  {
+    "number": 27,
+    "stem": "q4_ring_ablation",
+    "script": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai/figures/draw_q4_ring_ablation.m",
+    "export": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/figures/q4_ring_ablation.png"
+  }
+]

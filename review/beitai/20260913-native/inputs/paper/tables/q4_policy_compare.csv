@@ -1,0 +1,7 @@
+group,cases,n_scouts,scout_geometry,second_station,step_m,n_actions,clear_ratio,n_true,n_cleared
+window-1,XU7K-FB9B-7CBC-V9JH,17,origin plus 900 m and 2100 m aligned 8-gons,"(800,700) m",1063.014581273465,338,0.9166666666666666,12,11
+window-2,7GX8-6986-P9P4-4JZG,17,origin plus 900 m and 2100 m aligned 8-gons,"(800,700) m",1063.014581273465,480,0.9,10,9
+window-3,A69F-C2FE-ZDNT-JMGF,17,origin plus 900 m and 2100 m aligned 8-gons,"(800,700) m",1063.014581273465,299,1.0,12,12
+lattice-1,JXCC-FPAB-8G8W-38NV,37,triangular lattice s=850 m,"interior first (150,pm400) m",427.20018726587654,507,1.0,10,10
+lattice-2,YQTQ-FT7R-JXAJ-VSYX,37,triangular lattice s=850 m,"interior first (150,pm400) m",427.20018726587654,438,1.0,12,12
+lattice-3,JQ6W-RHH2-2W69-K9Z9,37,triangular lattice s=850 m,"interior first (150,pm400) m",427.20018726587654,415,1.0,12,12

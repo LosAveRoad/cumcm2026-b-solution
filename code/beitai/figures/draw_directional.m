@@ -1,0 +1,1 @@
+f=figure('Name','Fig20 directional','Color','white'); t=linspace(-pi/2,pi/2,181); fill(200+1000*cos(t),1000*sin(t),'b'); hold on; plot([200 700 850],[0 0 0],'o-r'); axis equal; xlabel('x (m)'); ylabel('y (m)'); title('定向源前向闭扇形 G=200, q=700, p=850 m');

@@ -1,0 +1,1 @@
+f=figure('Name','Fig24 optical','Color','white'); [X,Y]=meshgrid(-100:25:100,-100:25:100); plot(X(:),Y(:),'o'); hold on; t=linspace(0,2*pi,361); plot(80*cos(t),80*sin(t),'r--'); plot(20*cos(t),20*sin(t),'k'); axis equal; xlabel('x (m)'); ylabel('y (m)'); title('25 m 光学方格与 80 m 启用范围');

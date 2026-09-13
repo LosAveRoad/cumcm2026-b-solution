@@ -1,0 +1,7 @@
+% Figure 7: paper/main.tex, paper/tables/q1_example_vertices.csv, code/q1q2/geom.py, code/q1q2/experiment.py
+% Native GUI only; saved data/formula drawing. No upstream experiment.
+base='/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/code/beitai'; addpath(base);run([base '/plot_data.m']);
+blue=[.141 .388 .627];orange=[.851 .510 .169];gray=[.451 .482 .525];red=[.714 .271 .271];pale=[.90 .94 .98];
+f=figure('Name','F07 wedge_intersect','Color','white');
+subplot(1,2,1);hold on;for sg=[-1 1];plot([0 1000*cos((45+sg)*pi/180)],[0 1000*sin((45+sg)*pi/180)],'Color',blue,'LineWidth',1.7);plot([1000 1000+1000*cos((135+sg)*pi/180)],[0 1000*sin((135+sg)*pi/180)],'Color',orange,'LineWidth',1.7);end;plot([0 1000],[0 0],'ks','MarkerSize',8);plot(500,500,'kx','MarkerSize',10);bt_poly([475 475;525 475;525 525;475 525],red);axis equal;axis([-70 1070 -80 840]);bt_ax('x (m)','y (m)');bt_label(20,-40,'S1');bt_label(940,-40,'S2');title('两站真实1°楔形','FontSize',26);subplot(1,2,2);hold on;bt_poly(P,blue);plot(P(:,1),P(:,2),'o','Color',blue,'MarkerFaceColor',blue);bt_circle([500 (P(1,2)+P(3,2))/2],(P(1,2)-P(3,2))/2,orange,'--');plot(500,500,'kx','MarkerSize',10);axis equal;axis([477 523 477 523]);bt_ax('x (m)','y (m)');title('交会区局部放大','FontSize',26);
+fid=fopen('/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/logs/fig07_native.txt','w');fprintf(fid,'DRAW_SCRIPT_COMPLETE figure=7\n');fclose(fid);

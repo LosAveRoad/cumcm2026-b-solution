@@ -1,0 +1,4 @@
+id,problem,case_code,n_true,n_omni,n_dir,n_cleared,clear_ratio,n_actions,virtual_time_s,mean_clear_time_s,walk_m
+演练1,3,UUDJ-WJGP-NBRH-8V2N,16,16,0,16,1.0,132,3158.7139,197.42,11993.6
+演练2,3,XUXT-9646-NF9K-42J4,12,12,0,12,1.0,150,3360.202868,280.017,12456.0
+演练3,3,2GA6-9ADV-XD3E-AVMK,11,11,0,11,1.0,160,3245.032067,295.003,11575.2

@@ -1,0 +1,19 @@
+{
+  "run_id": "20260913-native",
+  "scope": "draw_and_replace_only",
+  "active_count": 27,
+  "render_passed_count": 0,
+  "render_skipped_count": 26,
+  "render_blocked_count": 1,
+  "upstream_recompute_status": "out_of_scope_by_latest_user_instruction",
+  "software": "Baltamatica 2025",
+  "software_started": true,
+  "native_gui_figure_created": true,
+  "native_file_export_verified": false,
+  "reason": "北太天元命令行模式不支持 figure；GUI 图形窗口已生成图4，但原生导出对话框尚未完成文件写入验证。",
+  "figure_19": "skipped_missing_sample_data",
+  "figures_13_14": "skipped_missing_complete_grid_data",
+  "paper_replaced": false,
+  "paper_pdf_recompiled": false,
+  "old_images_retained": true
+}

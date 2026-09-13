@@ -1,0 +1,4 @@
+i,id,case_code,n_true,n_omni,n_dir,n_cleared,clear_ratio,n_actions,virtual_time_s,mean_clear_time_s
+1,演练1,JXCC-FPAB-8G8W-38NV,10,0,10,10,1.0,507,15023.990156,1502.3990156
+2,演练2,YQTQ-FT7R-JXAJ-VSYX,12,8,4,12,1.0,438,15644.484645,1303.7070537500001
+3,演练3,JQ6W-RHH2-2W69-K9Z9,12,10,2,12,1.0,415,14470.475359,1205.8729465833333

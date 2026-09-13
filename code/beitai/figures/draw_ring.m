@@ -1,0 +1,1 @@
+f=figure('Name','Fig27 ring','Color','white'); a=readmatrix('/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/inputs/paper/tables/q4_ring_ablation.csv'); plot(a(:,1),a(:,2),'o-'); hold on; yline(500,'r--'); xline(500*sqrt(3),'k--'); xlabel('格距 s (m)'); ylabel('覆盖半径 rho (m)'); title('三角格覆盖半径 rho=s/sqrt(3)');

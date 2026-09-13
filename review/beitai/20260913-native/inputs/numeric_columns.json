@@ -1,0 +1,305 @@
+{
+  "q4_ring_ablation": {
+    "columns": [
+      "s_m",
+      "rho_m",
+      "exists_a",
+      "a_plus_rho_m",
+      "a_minus_rho_m",
+      "q4_n_points"
+    ],
+    "source": "paper/tables/q4_ring_ablation.csv",
+    "source_sha256": "1dd45efe12948d892df6d4762181ed8e1d730e692db81bc6d14b50212b26d4d0",
+    "numeric_sha256": "5e19ad05c425cba833a902e946795cc485fe22ee09b3f6fbaedafefc81580f88",
+    "rows": 6
+  },
+  "q4_scout_xy": {
+    "columns": [
+      "i",
+      "x",
+      "y"
+    ],
+    "source": "paper/tables/q4_scout_xy.csv",
+    "source_sha256": "87a24f1df173dea2685bd61381369053631c450a4ce01fa6dd830499dfe039f7",
+    "numeric_sha256": "c80b79c723bf1c7024a709c5c98e51678bce550f668dc939e27f52aeff51f02a",
+    "rows": 37
+  },
+  "q3_scout_xy": {
+    "columns": [
+      "visit",
+      "x",
+      "y"
+    ],
+    "source": "paper/tables/q3_scout_xy.csv",
+    "source_sha256": "9c9b3866be2253f2957dd8cb3aed496483fe6c8519bb152662acd84116673177",
+    "numeric_sha256": "4ce603a263cc1dc86bae08f67f08dd15b710ae09adace0e01825cd7f18a7e455",
+    "rows": 9
+  },
+  "q1_observed": {
+    "columns": [
+      "value"
+    ],
+    "source": "paper/tables/q1_observed.csv",
+    "source_sha256": "4f805a7b4bf6d08f99f3d6c310f0530b851f20302c1bc102044491f4e7cdc4fb",
+    "numeric_sha256": "7299bfe9dce729ae0d033650ceb2603e20601ec4d692b5f3209dcbd028957ea6",
+    "rows": 64
+  },
+  "q4_lattice": {
+    "columns": [
+      "value"
+    ],
+    "source": "paper/tables/q4_lattice.csv",
+    "source_sha256": "3e4f48cb713b51fb62ad07256ff1067022b262df642bf06fae25bd30f9a90c76",
+    "numeric_sha256": "f7ed1a34dd9b347c15f985e22944ab58372edd833b81c2bd2eaac96c79933b0e",
+    "rows": 6
+  },
+  "q2_axis_compare": {
+    "columns": [
+      "covers_psi45",
+      "covers_band",
+      "median_D_m"
+    ],
+    "source": "paper/tables/q2_axis_compare.csv",
+    "source_sha256": "e3dc6bbd0e39e374f68284ae925f68ab83b063bbd7dda1038112d89e7e2ae258",
+    "numeric_sha256": "8df8abbef1b46ce12ccb25222fa51ea6a98a1b2b65c259f3c8227fc34e233a9d",
+    "rows": 4
+  },
+  "q1_mc_sample": {
+    "columns": [
+      "k",
+      "diameter",
+      "covers",
+      "sec_radius",
+      "n_vertices",
+      "area",
+      "helper_in_wedges"
+    ],
+    "source": "paper/tables/q1_mc_sample.csv",
+    "source_sha256": "16120eab6e310860fcba7df915ff500e2513ee09a32153c877966fe97a63fe6a",
+    "numeric_sha256": "b18855e0e7cf74423aa000e6a06f6807391d5604faaa86124bf08db2964c21d1",
+    "rows": 400
+  },
+  "q1_example_vertices": {
+    "columns": [
+      "i",
+      "x",
+      "y"
+    ],
+    "source": "paper/tables/q1_example_vertices.csv",
+    "source_sha256": "4ec625d2e0b5892fceca6f5b58aa61686c58d133c767cd6ec03f7333ffeae5fe",
+    "numeric_sha256": "b34a2ab27de38790a75efa107c9479cb5bb500b7bb500aae77303cdd239a225b",
+    "rows": 4
+  },
+  "q2_sensitivity_sweep": {
+    "columns": [
+      "t_m",
+      "r_m",
+      "err_deg",
+      "n_g",
+      "n_posterior",
+      "median_D_m",
+      "p90_D_m",
+      "mean_D_m",
+      "median_psi_deg",
+      "hear1000_frac",
+      "hear1500_frac",
+      "clearable_frac",
+      "one_shot_median"
+    ],
+    "source": "paper/tables/q2_sensitivity_sweep.csv",
+    "source_sha256": "d208790baa3b94f32c2689281ac7e44a0b6f256b87859efc949a9ce5229e94aa",
+    "numeric_sha256": "5f7c31d8e5a1b5125fdef07c8f16c006567a1fe6ad7717c77eb80cea2da1efff",
+    "rows": 6
+  },
+  "q2_design_row": {
+    "columns": [
+      "r",
+      "t",
+      "sign",
+      "s2x",
+      "s2y",
+      "n_heard",
+      "hear1000_frac",
+      "hear1500_frac",
+      "median_D",
+      "p90_D",
+      "mean_D",
+      "clearable_frac",
+      "median_psi",
+      "walk_from_s1"
+    ],
+    "source": "paper/tables/q2_design_row.csv",
+    "source_sha256": "4063166097fffb4e50672ee2cc4d3dd940c34e246eeaae8ac9db87e567ed7cfd",
+    "numeric_sha256": "43e919216234c1d3e2c3ece53312a8929cfc7856bd96fcf90a38f8a2d56d00dd",
+    "rows": 2
+  },
+  "q4_leftover": {
+    "columns": [
+      "value"
+    ],
+    "source": "paper/tables/q4_leftover.csv",
+    "source_sha256": "98af82df013cfb0752989038b4e27286778d6c008c0803a7744fc92842ed08c4",
+    "numeric_sha256": "a751ed9070da9bca3a0d5d0885fea1958353405432df510bcd6c0d75e79a0b0f",
+    "rows": 16
+  },
+  "q2_sensitivity_observed": {
+    "columns": [
+      "value"
+    ],
+    "source": "paper/tables/q2_sensitivity_observed.csv",
+    "source_sha256": "910ab055e0c085c839aadb594910305c6924108ec3d965405a8e74d55be75bd6",
+    "numeric_sha256": "c4a70444d66638dc237a65dae6b324740c05b9f6bb5043a2780ccc5f64be2eb1",
+    "rows": 28
+  },
+  "interface_fields": {
+    "columns": [],
+    "source": "paper/tables/interface_fields.csv",
+    "source_sha256": "3c1563969b7d4295c7084efcfe925bb42644e729d72ffc509466c4e5e7b4ad12",
+    "numeric_sha256": "545c38b0922de19734fbffde62792c37c2aef6a3216cfa472449173165220f7d",
+    "rows": 4
+  },
+  "q4_method2": {
+    "columns": [
+      "i",
+      "n_true",
+      "n_omni",
+      "n_dir",
+      "n_cleared",
+      "clear_ratio",
+      "n_actions",
+      "virtual_time_s",
+      "mean_clear_time_s",
+      "walk_m"
+    ],
+    "source": "paper/tables/q4_method2.csv",
+    "source_sha256": "bb1913f7457e1b6430673d1708b504de2e049deecd7e725561873014a05376df",
+    "numeric_sha256": "3b108bd2989144e1d9895c3aee0dcaee226f5fd9aeb8bfde72e1d17631ad8350",
+    "rows": 3
+  },
+  "q4_policy_compare": {
+    "columns": [
+      "n_scouts",
+      "step_m",
+      "n_actions",
+      "clear_ratio",
+      "n_true",
+      "n_cleared"
+    ],
+    "source": "paper/tables/q4_policy_compare.csv",
+    "source_sha256": "12bc3ea9edcaceb2c9b818d1f706f7c2c9edd5649c944bcc32d7d710cf2f8e00",
+    "numeric_sha256": "df129a6800ddea6939213b6e436c59af1c1f760646432ad518d15733cd769cac",
+    "rows": 6
+  },
+  "q3_residual_pts": {
+    "columns": [
+      "azimuth_deg",
+      "dist_R0_m",
+      "dist_R1_m",
+      "dist_O_m",
+      "in_R0_disk",
+      "in_R1_disk"
+    ],
+    "source": "paper/tables/q3_residual_pts.csv",
+    "source_sha256": "7f37be4174a18a23be617cfff352465f6f5ae2952f761bc917a86c0ef1a8ad3d",
+    "numeric_sha256": "03a06b8f18dad75da792c4f7a697b6b9df1b23f786e7eadf7a5bb076376c6c57",
+    "rows": 2
+  },
+  "q4_fullclear": {
+    "columns": [
+      "i",
+      "n_true",
+      "n_omni",
+      "n_dir",
+      "n_cleared",
+      "clear_ratio",
+      "n_actions",
+      "virtual_time_s",
+      "mean_clear_time_s"
+    ],
+    "source": "paper/tables/q4_fullclear.csv",
+    "source_sha256": "f1d48a71fb7f880d84508f75a065c3e38beaddefed002b634088b8f4ad386259",
+    "numeric_sha256": "c20be5f4c2d50afd01bf180a2c0b02c22485e645cb5493879e18c83a1882cf2c",
+    "rows": 3
+  },
+  "protocol_constants": {
+    "columns": [
+      "value"
+    ],
+    "source": "paper/tables/protocol_constants.csv",
+    "source_sha256": "78489385a59ccff219612a7ff9e77a0e9b44d2d6e9048df1819cf9a58798c25d",
+    "numeric_sha256": "3a68e2753189b421a689dcf687b3cca475fc631b830f11094cb1d6b350c6b5d5",
+    "rows": 11
+  },
+  "q34_observed": {
+    "columns": [
+      "value"
+    ],
+    "source": "paper/tables/q34_observed.csv",
+    "source_sha256": "670a645d680d63876c507d3d78df721c3d779ed0024da97c194fe0b507d65b1b",
+    "numeric_sha256": "8930390e5408f53eee0bc665b8e28eec5575fb3b12f452591b3f7b4a44e97101",
+    "rows": 21
+  },
+  "q4_rehearsal": {
+    "columns": [
+      "problem",
+      "n_true",
+      "n_omni",
+      "n_dir",
+      "n_cleared",
+      "clear_ratio",
+      "n_actions",
+      "virtual_time_s",
+      "mean_clear_time_s"
+    ],
+    "source": "paper/tables/q4_rehearsal.csv",
+    "source_sha256": "e3558877410d11b7bcb64c3965a965d2741ecde0ae469783f5f76b91d0eb6029",
+    "numeric_sha256": "9ea0fe3c5d9942de4ffa551639874416bbc7029af194b4a82450aeaaa5e0c5d2",
+    "rows": 3
+  },
+  "q4_visit_xy": {
+    "columns": [
+      "i",
+      "x",
+      "y"
+    ],
+    "source": "paper/tables/q4_visit_xy.csv",
+    "source_sha256": "3661c826e97a3c626565f6bdab8f7a8ce89d5c8b50d4308e2ad464ac759ede44",
+    "numeric_sha256": "38b91dc4d106b0d588dcb1ee38c534f1163345a9d8454de00abe9ab02a44eefe",
+    "rows": 37
+  },
+  "q1_mc_meta": {
+    "columns": [
+      "seed",
+      "n_requested",
+      "n_bounded",
+      "n_covers",
+      "cover_rate",
+      "n_raw_bounded",
+      "raw_cover_rate",
+      "median_diameter",
+      "n_csv_rows"
+    ],
+    "source": "paper/tables/q1_mc_meta.csv",
+    "source_sha256": "fbd9b93ab0b1ac3b4059d7ed6956a74fda3bdd8b3663215189ad98c7c9cb983c",
+    "numeric_sha256": "68e7ac37d9e14d2082421f67a9c1fa1b8b6980f747fde1b5e114efa7635939ce",
+    "rows": 1
+  },
+  "q3_rehearsal": {
+    "columns": [
+      "problem",
+      "n_true",
+      "n_omni",
+      "n_dir",
+      "n_cleared",
+      "clear_ratio",
+      "n_actions",
+      "virtual_time_s",
+      "mean_clear_time_s",
+      "walk_m"
+    ],
+    "source": "paper/tables/q3_rehearsal.csv",
+    "source_sha256": "1737046f771db66b9315f87af82f60902f10baecaab390d89fee13b44743ac68",
+    "numeric_sha256": "6e7f4243fa1be4a86e5e4e87c51d0726db8a23a1179b61a9f4eb5c99100dfb23",
+    "rows": 3
+  }
+}

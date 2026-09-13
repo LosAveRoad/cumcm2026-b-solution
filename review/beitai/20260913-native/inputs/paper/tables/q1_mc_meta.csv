@@ -1,0 +1,2 @@
+seed,n_requested,n_bounded,n_covers,cover_rate,n_raw_bounded,raw_cover_rate,median_diameter,n_csv_rows
+2026,400,400,382,0.955,384,1.0,137.95025996263794,400

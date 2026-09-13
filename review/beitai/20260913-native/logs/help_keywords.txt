@@ -1,0 +1,14 @@
+
+如果您不熟悉北太天元的用法，可以尝试使用如下的方式获取帮助与支持：
+
+[*] 使用 help <名称> 来获取函数或变量等相关的帮助，例如 help size
+
+[*] 使用北太天元帮助系统（位于菜单栏 [帮助] 以及快捷工具栏 [帮助] 按钮）
+
+[*] 要获得插件相关帮助信息，可使用 list_plugins 和 plugin_help("插件名") 等命令
+
+[*] 访问北太天元开发者社区 https://www.baltamatica.com/community.html
+
+[*] 若使用字符前端，可使用默认浏览器打开如下本地文档：
+    http://localhost:59253/homepage.html
+

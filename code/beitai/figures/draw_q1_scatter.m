@@ -1,0 +1,1 @@
+f=figure('Name','Fig11 Q1 residual','Color','white'); a=readmatrix('/Users/seint/Desktop/CUMCM2026B-Q3-reviewed/review/beitai/20260913-native/inputs/paper/tables/q1_mc_sample.csv'); scatter(a(:,2),a(:,4)-a(:,2)/2,20,'filled'); yline(0,'k--'); xlabel('后验直径 (m)'); ylabel('R_{SEC}-D/2 (m)'); title('Q1 包围圆残差');

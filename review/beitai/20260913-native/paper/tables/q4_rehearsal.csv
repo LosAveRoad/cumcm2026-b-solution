@@ -1,0 +1,4 @@
+id,problem,case_code,n_true,n_omni,n_dir,n_cleared,clear_ratio,n_actions,virtual_time_s,mean_clear_time_s,walk_m
+演练1,4,XU7K-FB9B-7CBC-V9JH,12,3,9,11,0.9166666666666666,338,27114.446974,2464.949724909091,
+演练2,4,7GX8-6986-P9P4-4JZG,10,2,8,9,0.9,480,29826.721728,3314.080192,
+演练3,4,A69F-C2FE-ZDNT-JMGF,12,1,11,12,1.0,299,18190.036215,1515.83635125,

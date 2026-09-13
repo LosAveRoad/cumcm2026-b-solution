@@ -1,0 +1,30 @@
+{
+  "schema_version": "q3.reviewed_certificate.v1",
+  "kind": "conditional_deterministic_finite_action_theorem",
+  "policy": "q3_nine_net_contraction_v1",
+  "searcher": "code/q3/searcher.py",
+  "mixed": false,
+  "detection_proved_under_hypotheses": true,
+  "clearance_proved_under_hypotheses": true,
+  "hypotheses": [
+    "fixed omni sources in closed arena of radius 1800 m",
+    "10 <= N <= 16 and unique channels from 1..20",
+    "1000 <= each effective receiving radius <= 1500 m",
+    "absolute bearing error <= 1 degree",
+    "optical clear succeeds within 20 m",
+    "valid accepted operations under the model without runtime or technical interruption"
+  ],
+  "covering_radius_m": 956.0510880488383,
+  "skip_test": "exact rational rectangle partition proves the entire scout lens covered; unknown means keep",
+  "finite_witnesses_used_for_skip": false,
+  "service_rule": "move half of the current range upper bound along the latest bearing",
+  "contraction_coefficient": 0.501,
+  "outward_position_margin_m": 0.000001,
+  "max_service_actions_after_discovery_per_source": 7,
+  "max_total_actions_including_enter_exit": 294,
+  "default_action_cap": 900,
+  "offline_validation": "code/q3/offline_results.json",
+  "official_validation_of_revised_code": "not_run",
+  "global_time_optimality_proved": false,
+  "legacy_code": "code/q3/searcher_legacy.py"
+}

@@ -1,0 +1,776 @@
+{
+  "schema_version": "beitai.figures.plan.v1",
+  "prepared_date": "2026-09-13",
+  "project_root_at_preparation": "/Users/seint/Desktop/CUMCM2026B-Q3-reviewed",
+  "phase": "frozen_execution",
+  "prohibit_image_data_extraction": true,
+  "skip_unrecoverable_and_continue": true,
+  "active_count": 27,
+  "excluded_count": 4,
+  "status_note": "准备阶段均未执行；computation_scope记录实际完成的计算层级，当前none。整图跳过与上游重算跳过分别统计，分母使用本次冻结active_count。",
+  "source_recovery_note": "missing项列出的source_files仅为上下文，不代表所需原始采样数据已存在。",
+  "figures": [
+    {
+      "figure_number": 1,
+      "file": "paper/figures/framework.png",
+      "title": "四问几何衔接",
+      "tex_file": "paper/main.tex",
+      "tex_line": 65,
+      "baseline_pdf_page_1_based": 5,
+      "baseline_image_pixels": [
+        2457,
+        609
+      ],
+      "source_files": [
+        "paper/main.tex",
+        "paper/tables/protocol_constants.csv",
+        "paper/tables/q1_example_vertices.csv",
+        "paper/tables/q2_axis_compare.csv",
+        "paper/tables/q3_scout_xy.csv"
+      ],
+      "source_status": "available",
+      "planned_method": "formula_reconstruction",
+      "planned_script": "code/beitai/figures/draw_framework.m",
+      "verification": "四联图；示意放大说明；交付点800/700；场地1800与环1000",
+      "skip_rule": "若依赖面板无法可靠构造，整图跳过，不能复用旧面板宣称整图重绘",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 2,
+      "file": "paper/figures/eda_radii.png",
+      "title": "半径相对尺度",
+      "tex_file": "paper/main.tex",
+      "tex_line": 241,
+      "baseline_pdf_page_1_based": 12,
+      "baseline_image_pixels": [
+        822,
+        784
+      ],
+      "source_files": [
+        "paper/tables/protocol_constants.csv"
+      ],
+      "source_status": "available",
+      "planned_method": "formula_reconstruction",
+      "planned_script": "code/beitai/figures/draw_eda_radii.m",
+      "verification": "5/20/1000/1500/1800 m；等比例；近场放大窗",
+      "skip_rule": "基础圆绘制或导出失败则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 3,
+      "file": "paper/figures/eda_constraint_line.png",
+      "title": "协议尺度链",
+      "tex_file": "paper/main.tex",
+      "tex_line": 248,
+      "baseline_pdf_page_1_based": 12,
+      "baseline_image_pixels": [
+        1296,
+        464
+      ],
+      "source_files": [
+        "paper/tables/protocol_constants.csv"
+      ],
+      "source_status": "available",
+      "planned_method": "replot_saved_results",
+      "planned_script": "code/beitai/figures/draw_eda_constraint_line.m",
+      "verification": "对数坐标、接收范围、标注不重叠",
+      "skip_rule": "对数坐标及等价实现失败则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 4,
+      "file": "paper/figures/eda_time_components.png",
+      "title": "虚拟时间分量",
+      "tex_file": "paper/main.tex",
+      "tex_line": 257,
+      "baseline_pdf_page_1_based": 13,
+      "baseline_image_pixels": [
+        977,
+        560
+      ],
+      "source_files": [
+        "paper/tables/protocol_constants.csv"
+      ],
+      "source_status": "available",
+      "planned_method": "recompute_derived_values",
+      "planned_script": "code/beitai/figures/draw_eda_time_components.m",
+      "verification": "行进200/5=40秒；换台1、检测5、光学3、激光2",
+      "skip_rule": "统计或柱图导出失败则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 5,
+      "file": "paper/figures/eda_protocol_ranges.png",
+      "title": "协议长度范围",
+      "tex_file": "paper/main.tex",
+      "tex_line": 264,
+      "baseline_pdf_page_1_based": 13,
+      "baseline_image_pixels": [
+        1006,
+        561
+      ],
+      "source_files": [
+        "paper/tables/protocol_constants.csv"
+      ],
+      "source_status": "available",
+      "planned_method": "replot_saved_results",
+      "planned_script": "code/beitai/figures/draw_eda_protocol_ranges.m",
+      "verification": "接收1000至1500区间；其他是定值；对数轴",
+      "skip_rule": "图元和等价实现失败则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 6,
+      "file": "paper/figures/halfplane.png",
+      "title": "示向楔与内法向",
+      "tex_file": "paper/main.tex",
+      "tex_line": 304,
+      "baseline_pdf_page_1_based": 15,
+      "baseline_image_pixels": [
+        849,
+        678
+      ],
+      "source_files": [
+        "paper/main.tex",
+        "code/q1q2/geom.py"
+      ],
+      "source_status": "available",
+      "planned_method": "formula_reconstruction",
+      "planned_script": "code/beitai/figures/draw_halfplane.m",
+      "verification": "wedge_halfplanes；真实半角1度；法向朝内",
+      "skip_rule": "公式几何核验或导出失败则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 7,
+      "file": "paper/figures/wedge_intersect.png",
+      "title": "两站交会区",
+      "tex_file": "paper/main.tex",
+      "tex_line": 313,
+      "baseline_pdf_page_1_based": 15,
+      "baseline_image_pixels": [
+        1862,
+        834
+      ],
+      "source_files": [
+        "paper/main.tex",
+        "paper/tables/q1_example_vertices.csv",
+        "code/q1q2/geom.py",
+        "code/q1q2/experiment.py"
+      ],
+      "source_status": "available",
+      "planned_method": "recompute_geometry",
+      "planned_script": "code/beitai/figures/draw_wedge_intersect.m",
+      "verification": "正交例两站0/0与1000/0，45/135度；全景与局部",
+      "skip_rule": "计算不符则不替换；可核验保存顶点的重绘须单列计算状态",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 8,
+      "file": "paper/figures/jung_vs_diamond.png",
+      "title": "对径圆正反例",
+      "tex_file": "paper/main.tex",
+      "tex_line": 320,
+      "baseline_pdf_page_1_based": 16,
+      "baseline_image_pixels": [
+        1676,
+        814
+      ],
+      "source_files": [
+        "paper/main.tex",
+        "paper/tables/q1_example_vertices.csv",
+        "code/q1q2/geom.py"
+      ],
+      "source_status": "available",
+      "planned_method": "recompute_geometry",
+      "planned_script": "code/beitai/figures/draw_jung_vs_diamond.m",
+      "verification": "等边边长80，最小圆80/sqrt(3)>40；正交四边形覆盖",
+      "skip_rule": "无法证实图形及圆关系则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 9,
+      "file": "paper/figures/q1_example_polygon.png",
+      "title": "正交交会合成例",
+      "tex_file": "paper/main.tex",
+      "tex_line": 400,
+      "baseline_pdf_page_1_based": 18,
+      "baseline_image_pixels": [
+        1391,
+        697
+      ],
+      "source_files": [
+        "paper/tables/q1_example_vertices.csv",
+        "code/q1q2/results.json",
+        "code/q1q2/experiment.py",
+        "code/q1q2/geom.py"
+      ],
+      "source_status": "available",
+      "planned_method": "recompute_geometry",
+      "planned_script": "code/beitai/figures/draw_q1_example_polygon.m",
+      "verification": "D=34.92076949185099；R=17.460384745865277；面积609.3586398646148",
+      "skip_rule": "重算不符可用保存顶点重绘并记录，不能宣称重新复现实验",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 10,
+      "file": "paper/figures/q1_mc_diameter.png",
+      "title": "直径分布与覆盖计数",
+      "tex_file": "paper/main.tex",
+      "tex_line": 427,
+      "baseline_pdf_page_1_based": 19,
+      "baseline_image_pixels": [
+        1362,
+        591
+      ],
+      "source_files": [
+        "paper/tables/q1_mc_sample.csv",
+        "paper/tables/q1_mc_meta.csv",
+        "code/q1q2/experiment.py",
+        "code/q1q2/geom.py"
+      ],
+      "source_status": "available",
+      "planned_method": "saved_result_statistics_with_optional_upstream_recompute",
+      "planned_script": "code/beitai/figures/draw_q1_mc_diameter.m",
+      "verification": "400行，382覆盖18不覆盖；中位直径137.95025996263794",
+      "skip_rule": "上游输入恢复失败只跳过上游重算，仍由400行结果重绘",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "pending"
+    },
+    {
+      "figure_number": 11,
+      "file": "paper/figures/q1_jung_ratio_area.png",
+      "title": "残差与面积直径关系",
+      "tex_file": "paper/main.tex",
+      "tex_line": 434,
+      "baseline_pdf_page_1_based": 19,
+      "baseline_image_pixels": [
+        1380,
+        591
+      ],
+      "source_files": [
+        "paper/tables/q1_mc_sample.csv",
+        "paper/tables/q1_mc_meta.csv",
+        "code/q1q2/experiment.py",
+        "code/q1q2/geom.py"
+      ],
+      "source_status": "available",
+      "planned_method": "saved_result_statistics_with_optional_upstream_recompute",
+      "planned_script": "code/beitai/figures/draw_q1_jung_ratio_area.m",
+      "verification": "残差为sec_radius-diameter/2，非比值；全400行",
+      "skip_rule": "同图10；不以像素恢复点",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "pending"
+    },
+    {
+      "figure_number": 12,
+      "file": "paper/figures/second_station.png",
+      "title": "第二站离轴方案",
+      "tex_file": "paper/main.tex",
+      "tex_line": 478,
+      "baseline_pdf_page_1_based": 21,
+      "baseline_image_pixels": [
+        967,
+        936
+      ],
+      "source_files": [
+        "paper/main.tex",
+        "paper/tables/q2_axis_compare.csv",
+        "paper/tables/q2_design_row.csv",
+        "code/q1q2/geom.py"
+      ],
+      "source_status": "available",
+      "planned_method": "formula_reconstruction",
+      "planned_script": "code/beitai/figures/draw_second_station.m",
+      "verification": "theta35；r800；690.909/700/795三个意义分开",
+      "skip_rule": "正文参数和表不一致无法解释则跳过相关构造",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 13,
+      "file": "paper/figures/q2_median_D_heatmap.png",
+      "title": "直径中位数热力图",
+      "tex_file": "paper/main.tex",
+      "tex_line": 554,
+      "baseline_pdf_page_1_based": 23,
+      "baseline_image_pixels": [
+        969,
+        719
+      ],
+      "source_files": [
+        "code/q1q2/experiment.py",
+        "code/q1q2/geom.py",
+        "code/q1q2/results.json",
+        "paper/tables/q2_design_row.csv"
+      ],
+      "source_status": "recoverable",
+      "planned_method": "recover_deterministic_grid_and_recompute",
+      "planned_script": "code/beitai/figures/draw_q2_median_D_heatmap.m",
+      "verification": "11x12x2参数；70个中点位置；默认正侧；缺失格点不补0；线性P90",
+      "skip_rule": "缺完整q2_grid.csv；迁移/参考核不符则跳过，禁止读色值",
+      "render_status": "skipped",
+      "computation_status": "skipped",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "pending",
+      "skip_reason": "缺少完整网格；本轮按用户最新要求不迁移上游实验",
+      "old_image_retained": true
+    },
+    {
+      "figure_number": 14,
+      "file": "paper/figures/q2_psi_heatmap.png",
+      "title": "交角中位数热力图",
+      "tex_file": "paper/main.tex",
+      "tex_line": 561,
+      "baseline_pdf_page_1_based": 23,
+      "baseline_image_pixels": [
+        969,
+        719
+      ],
+      "source_files": [
+        "code/q1q2/experiment.py",
+        "code/q1q2/geom.py",
+        "code/q1q2/results.json"
+      ],
+      "source_status": "recoverable",
+      "planned_method": "recover_deterministic_grid_and_recompute",
+      "planned_script": "code/beitai/figures/draw_q2_psi_heatmap.m",
+      "verification": "与图13同批网格，交角单位度；区分网格点与交付点",
+      "skip_rule": "与图13共用数据门；不符则跳过",
+      "render_status": "skipped",
+      "computation_status": "skipped",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "pending",
+      "skip_reason": "缺少完整网格；本轮按用户最新要求不迁移上游实验",
+      "old_image_retained": true
+    },
+    {
+      "figure_number": 15,
+      "file": "paper/figures/q2_sensitivity.png",
+      "title": "偏移灵敏度",
+      "tex_file": "paper/main.tex",
+      "tex_line": 588,
+      "baseline_pdf_page_1_based": 24,
+      "baseline_image_pixels": [
+        1390,
+        591
+      ],
+      "source_files": [
+        "paper/tables/q2_sensitivity_sweep.csv",
+        "paper/tables/q2_sensitivity_observed.csv",
+        "code/q1q2/sensitivity.py",
+        "code/q1q2/geom.py"
+      ],
+      "source_status": "available",
+      "planned_method": "replot_results_then_conditional_recompute",
+      "planned_script": "code/beitai/figures/draw_q2_sensitivity.m",
+      "verification": "r1100；t200/350/500/650/800/1000；可听比例分母70",
+      "skip_rule": "重算失败仍可用保存的6行重绘，明确计算未完成",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "pending"
+    },
+    {
+      "figure_number": 16,
+      "file": "paper/figures/q2_err_sweep.png",
+      "title": "半角灵敏度",
+      "tex_file": "paper/main.tex",
+      "tex_line": 595,
+      "baseline_pdf_page_1_based": 25,
+      "baseline_image_pixels": [
+        914,
+        576
+      ],
+      "source_files": [
+        "paper/tables/q2_sensitivity_observed.csv",
+        "code/q1q2/sensitivity.py",
+        "code/q1q2/geom.py",
+        "paper/main.tex"
+      ],
+      "source_status": "available",
+      "planned_method": "replot_results_then_conditional_recompute",
+      "planned_script": "code/beitai/figures/draw_q2_err_sweep.m",
+      "verification": "err0.5/1/1.5；D30.9931/61.8675/92.6540；指示1/0/0，不是成功率",
+      "skip_rule": "重算失败可用保存指标，图例与正文同步纠正；不得补造成功率",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "pending"
+    },
+    {
+      "figure_number": 17,
+      "file": "paper/figures/q3_nine_disk.png",
+      "title": "Q3九点覆盖几何",
+      "tex_file": "paper/q3-body.tex",
+      "tex_line": 45,
+      "baseline_pdf_page_1_based": 27,
+      "baseline_image_pixels": [
+        1150,
+        1106
+      ],
+      "source_files": [
+        "paper/q3-body.tex",
+        "paper/tables/q3_scout_xy.csv",
+        "code/q3/detection_proof.json"
+      ],
+      "source_status": "available",
+      "planned_method": "recompute_geometry",
+      "planned_script": "code/beitai/figures/draw_q3_nine_disk.m",
+      "verification": "rho956.051088；tau541.196100；证明分段与Voronoi区分",
+      "skip_rule": "不调用旧几何结论覆盖修订Q3；无法核验则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 18,
+      "file": "paper/figures/q34_scout_nets.png",
+      "title": "Q3与Q4侦听网",
+      "tex_file": "paper/q3-body.tex",
+      "tex_line": 192,
+      "baseline_pdf_page_1_based": 32,
+      "baseline_image_pixels": [
+        1916,
+        997
+      ],
+      "source_files": [
+        "paper/tables/q3_scout_xy.csv",
+        "paper/tables/q4_scout_xy.csv",
+        "paper/q3-body.tex",
+        "code/src_jianmo_b_sim/geometry.py"
+      ],
+      "source_status": "available",
+      "planned_method": "recompute_geometry",
+      "planned_script": "code/beitai/figures/draw_q34_scout_nets.m",
+      "verification": "9/37点；Q4 s850；按点集比较，不当成实际轨迹",
+      "skip_rule": "集合/公式不符无法解释则跳过；不复用旧17点网",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 19,
+      "file": "paper/figures/q34_coverage_scatter.png",
+      "title": "覆盖采样示意",
+      "tex_file": "paper/q3-body.tex",
+      "tex_line": 197,
+      "baseline_pdf_page_1_based": 32,
+      "baseline_image_pixels": [
+        1394,
+        680
+      ],
+      "source_files": [
+        "paper/q3-body.tex",
+        "code/shared/experiment.py",
+        "paper/tables/q34_observed.csv",
+        "paper/tables/q3_scout_xy.csv",
+        "paper/tables/q4_scout_xy.csv"
+      ],
+      "source_status": "missing",
+      "planned_method": "skip_unless_original_sample_generation_recovered",
+      "planned_script": "code/beitai/figures/draw_q34_coverage_scatter.m",
+      "verification": "需恢复左右面板完整原始输入/生成顺序；摘要及站点不等同源样本",
+      "skip_rule": "SKIPPED_MISSING_SAMPLE_DATA：禁止数字化取点和新随机样本替代；默认保留整张旧图",
+      "render_status": "skipped",
+      "computation_status": "skipped",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "pending",
+      "skip_reason": "缺少原左右面板样本与完整生成依据，禁止从图片取点",
+      "old_image_retained": true
+    },
+    {
+      "figure_number": 20,
+      "file": "paper/figures/directional_listen.png",
+      "title": "定向源可听半平面",
+      "tex_file": "paper/main.tex",
+      "tex_line": 626,
+      "baseline_pdf_page_1_based": 34,
+      "baseline_image_pixels": [
+        1041,
+        1038
+      ],
+      "source_files": [
+        "paper/main.tex",
+        "paper/tables/q4_lattice.csv",
+        "code/src_jianmo_b_sim/geometry.py"
+      ],
+      "source_status": "available",
+      "planned_method": "formula_reconstruction",
+      "planned_script": "code/beitai/figures/draw_directional_listen.m",
+      "verification": "G200/0朝东；q700/0；a500；rho850/sqrt(3)；满足距离及点积",
+      "skip_rule": "不能核验几何关系则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 21,
+      "file": "paper/figures/q4_directional_sector.png",
+      "title": "定向闭扇形",
+      "tex_file": "paper/main.tex",
+      "tex_line": 633,
+      "baseline_pdf_page_1_based": 35,
+      "baseline_image_pixels": [
+        882,
+        882
+      ],
+      "source_files": [
+        "paper/main.tex",
+        "paper/tables/protocol_constants.csv"
+      ],
+      "source_status": "available",
+      "planned_method": "formula_reconstruction",
+      "planned_script": "code/beitai/figures/draw_q4_directional_sector.m",
+      "verification": "G圆心，朝东前向闭180度瓣；显示半径按已明确的1000m下限",
+      "skip_rule": "画面和公式冲突无法处理则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 22,
+      "file": "paper/figures/q4_silent_spoke.png",
+      "title": "发现引理轴向剖面",
+      "tex_file": "paper/main.tex",
+      "tex_line": 640,
+      "baseline_pdf_page_1_based": 36,
+      "baseline_image_pixels": [
+        860,
+        835
+      ],
+      "source_files": [
+        "paper/main.tex",
+        "paper/tables/q4_lattice.csv"
+      ],
+      "source_status": "available",
+      "planned_method": "formula_reconstruction",
+      "planned_script": "code/beitai/figures/draw_q4_silent_spoke.m",
+      "verification": "G200、q700、p850；rho850/sqrt(3)",
+      "skip_rule": "半径/朝向无法核验或不能导出则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 23,
+      "file": "paper/figures/q4_sector_chase.png",
+      "title": "保扇形第二站",
+      "tex_file": "paper/main.tex",
+      "tex_line": 766,
+      "baseline_pdf_page_1_based": 40,
+      "baseline_image_pixels": [
+        1842,
+        916
+      ],
+      "source_files": [
+        "paper/main.tex",
+        "code/src_jianmo_b_sim/geometry.py"
+      ],
+      "source_status": "available",
+      "planned_method": "formula_reconstruction",
+      "planned_script": "code/beitai/figures/draw_q4_sector_chase.m",
+      "verification": "(r,t)60/500；H朝S1侧；只作为几何示例，与演练150/400分离",
+      "skip_rule": "不能由公式建立前后半面关系则跳过；不能从图量坐标",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 24,
+      "file": "paper/figures/q4_optical_grid.png",
+      "title": "光学方格清除证书",
+      "tex_file": "paper/main.tex",
+      "tex_line": 773,
+      "baseline_pdf_page_1_based": 40,
+      "baseline_image_pixels": [
+        1021,
+        1004
+      ],
+      "source_files": [
+        "paper/main.tex",
+        "paper/tables/protocol_constants.csv",
+        "code/src_jianmo_b_sim/geometry.py"
+      ],
+      "source_status": "available",
+      "planned_method": "recompute_geometry",
+      "planned_script": "code/beitai/figures/draw_q4_optical_grid.m",
+      "verification": "边长25、R20、启用80；25/sqrt(2)<20；相交边缘单元完整",
+      "skip_rule": "边缘覆盖核验失败则修复或跳过，不能只画中心落圆内的格点",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 25,
+      "file": "paper/figures/q4_fullclear_bars.png",
+      "title": "Q4格网演练统计",
+      "tex_file": "paper/main.tex",
+      "tex_line": 882,
+      "baseline_pdf_page_1_based": 43,
+      "baseline_image_pixels": [
+        1801,
+        650
+      ],
+      "source_files": [
+        "paper/tables/q4_fullclear.csv",
+        "paper/tables/q4_policy_compare.csv",
+        "paper/main.tex"
+      ],
+      "source_status": "available",
+      "planned_method": "recompute_summary_from_historical_records",
+      "planned_script": "code/beitai/figures/draw_q4_fullclear_bars.m",
+      "verification": "10/10、12/12、12/12；逐场虚拟时间/已清数；不同于method1/result.json",
+      "skip_rule": "对应CSV字段不能核验则跳过，不拿其他场次替换",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 26,
+      "file": "paper/figures/q4_rehearsal_bars.png",
+      "title": "Q4窗口演练统计",
+      "tex_file": "paper/main.tex",
+      "tex_line": 955,
+      "baseline_pdf_page_1_based": 44,
+      "baseline_image_pixels": [
+        1328,
+        544
+      ],
+      "source_files": [
+        "paper/tables/q4_rehearsal.csv",
+        "paper/tables/q4_policy_compare.csv",
+        "paper/main.tex"
+      ],
+      "source_status": "available",
+      "planned_method": "recompute_summary_from_historical_records",
+      "planned_script": "code/beitai/figures/draw_q4_rehearsal_bars.m",
+      "verification": "已清/真数11/12、9/10、12/12；900/2100同辐条网",
+      "skip_rule": "原始记录不可用则跳过；不使用Q4格网三场替换",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    },
+    {
+      "figure_number": 27,
+      "file": "paper/figures/q4_ring_ablation.png",
+      "title": "三角格间距扫描",
+      "tex_file": "paper/main.tex",
+      "tex_line": 998,
+      "baseline_pdf_page_1_based": 46,
+      "baseline_image_pixels": [
+        1040,
+        591
+      ],
+      "source_files": [
+        "paper/tables/q4_ring_ablation.csv",
+        "paper/main.tex",
+        "code/src_jianmo_b_sim/geometry.py"
+      ],
+      "source_status": "available",
+      "planned_method": "recompute_geometry",
+      "planned_script": "code/beitai/figures/draw_q4_ring_ablation.m",
+      "verification": "rho=s/sqrt(3)；s850通过、900失败；精确500sqrt(3)边界失败",
+      "skip_rule": "不以866.03舍入值验证严格阈值；无法解释差异则跳过",
+      "render_status": "pending",
+      "computation_status": "pending",
+      "actually_run_in_beitai": false,
+      "computation_scope": "none",
+      "upstream_recompute_status": "not_applicable"
+    }
+  ],
+  "excluded": [
+    {
+      "file": "paper/figures/chase_flow.png",
+      "source_status": "excluded_unreferenced",
+      "reason": "当前活动LaTeX未引用，保留旧文件，不计入27图执行范围",
+      "actually_run_in_beitai": false
+    },
+    {
+      "file": "paper/figures/covering_skeleton.png",
+      "source_status": "excluded_unreferenced",
+      "reason": "当前活动LaTeX未引用，保留旧文件，不计入27图执行范围",
+      "actually_run_in_beitai": false
+    },
+    {
+      "file": "paper/figures/q3_rehearsal_bars.png",
+      "source_status": "excluded_unreferenced",
+      "reason": "当前活动LaTeX未引用，保留旧文件，不计入27图执行范围",
+      "actually_run_in_beitai": false
+    },
+    {
+      "file": "paper/figures/q3_residual.png",
+      "source_status": "excluded_unreferenced",
+      "reason": "当前活动LaTeX未引用，保留旧文件，不计入27图执行范围",
+      "actually_run_in_beitai": false
+    }
+  ]
+}

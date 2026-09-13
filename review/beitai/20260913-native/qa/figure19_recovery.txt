@@ -1,0 +1,1 @@
+Checked code/shared/experiment.py, paper/tables/q34_observed.csv and scout tables; no original plot script or full left/right source, heading and translated-point records. Aggregate samples cannot identify plotted point sets. SKIPPED_MISSING_SAMPLE_DATA; original PNG retained.

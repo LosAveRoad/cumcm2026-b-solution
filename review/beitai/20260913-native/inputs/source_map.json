@@ -1,0 +1,102 @@
+{
+  "paper/main.tex": {
+    "sha256": "73dcce2acda2d764e4683ac5e46fdc168b2090fea12605f35351a4e0b7c6a7da",
+    "bytes": 83205
+  },
+  "paper/tables/protocol_constants.csv": {
+    "sha256": "78489385a59ccff219612a7ff9e77a0e9b44d2d6e9048df1819cf9a58798c25d",
+    "bytes": 161
+  },
+  "paper/tables/q1_example_vertices.csv": {
+    "sha256": "4ec625d2e0b5892fceca6f5b58aa61686c58d133c767cd6ec03f7333ffeae5fe",
+    "bytes": 104
+  },
+  "paper/tables/q2_axis_compare.csv": {
+    "sha256": "e3dc6bbd0e39e374f68284ae925f68ab83b063bbd7dda1038112d89e7e2ae258",
+    "bytes": 351
+  },
+  "paper/tables/q3_scout_xy.csv": {
+    "sha256": "9c9b3866be2253f2957dd8cb3aed496483fe6c8519bb152662acd84116673177",
+    "bytes": 411
+  },
+  "code/q1q2/geom.py": {
+    "sha256": "3d386a255ba42bdae2d9909836f463ba49d1206a0066603ebb58b80a7dfa7533",
+    "bytes": 18942
+  },
+  "code/q1q2/experiment.py": {
+    "sha256": "d8fbd1095c18af89389deaa7e56599c2b413610a4fcaec6bcef2602e907ee371",
+    "bytes": 24116
+  },
+  "code/q1q2/results.json": {
+    "sha256": "75938303828291061ad84cbf97b33f4a65c0dae3f300954a43682b6adeeb24e6",
+    "bytes": 8027
+  },
+  "paper/tables/q1_mc_sample.csv": {
+    "sha256": "16120eab6e310860fcba7df915ff500e2513ee09a32153c877966fe97a63fe6a",
+    "bytes": 26027
+  },
+  "paper/tables/q1_mc_meta.csv": {
+    "sha256": "fbd9b93ab0b1ac3b4059d7ed6956a74fda3bdd8b3663215189ad98c7c9cb983c",
+    "bytes": 157
+  },
+  "paper/tables/q2_design_row.csv": {
+    "sha256": "4063166097fffb4e50672ee2cc4d3dd940c34e246eeaae8ac9db87e567ed7cfd",
+    "bytes": 422
+  },
+  "paper/tables/q2_sensitivity_sweep.csv": {
+    "sha256": "d208790baa3b94f32c2689281ac7e44a0b6f256b87859efc949a9ce5229e94aa",
+    "bytes": 899
+  },
+  "paper/tables/q2_sensitivity_observed.csv": {
+    "sha256": "910ab055e0c085c839aadb594910305c6924108ec3d965405a8e74d55be75bd6",
+    "bytes": 727
+  },
+  "code/q1q2/sensitivity.py": {
+    "sha256": "21e452a65fc94e92bf9a92259c33161d26505f562cf3710ddf82a32ad560b2c7",
+    "bytes": 6218
+  },
+  "paper/q3-body.tex": {
+    "sha256": "7c130460f90d956481f328d8a6e942c93bd9bc021e2dbbfc8c51cc5b2b5bdeeb",
+    "bytes": 17399
+  },
+  "code/q3/detection_proof.json": {
+    "sha256": "b61b55c670ce5b1116b2247d450001749023c785087f877a45692ca8cf3a08a4",
+    "bytes": 1357
+  },
+  "paper/tables/q4_scout_xy.csv": {
+    "sha256": "87a24f1df173dea2685bd61381369053631c450a4ce01fa6dd830499dfe039f7",
+    "bytes": 1441
+  },
+  "code/src_jianmo_b_sim/geometry.py": {
+    "sha256": "00b730275827e11c443763476d0eea8c153b3b67b28dfc7f9b45dc85e5afdd9d",
+    "bytes": 15035
+  },
+  "code/shared/experiment.py": {
+    "sha256": "e6ff93120a332282c621560b45aad8ec5a7f2542dc0885d984795197ce2f3b52",
+    "bytes": 21656
+  },
+  "paper/tables/q34_observed.csv": {
+    "sha256": "670a645d680d63876c507d3d78df721c3d779ed0024da97c194fe0b507d65b1b",
+    "bytes": 629
+  },
+  "paper/tables/q4_lattice.csv": {
+    "sha256": "3e4f48cb713b51fb62ad07256ff1067022b262df642bf06fae25bd30f9a90c76",
+    "bytes": 155
+  },
+  "paper/tables/q4_fullclear.csv": {
+    "sha256": "f1d48a71fb7f880d84508f75a065c3e38beaddefed002b634088b8f4ad386259",
+    "bytes": 336
+  },
+  "paper/tables/q4_policy_compare.csv": {
+    "sha256": "12bc3ea9edcaceb2c9b818d1f706f7c2c9edd5649c944bcc32d7d710cf2f8e00",
+    "bytes": 849
+  },
+  "paper/tables/q4_rehearsal.csv": {
+    "sha256": "e3558877410d11b7bcb64c3965a965d2741ecde0ae469783f5f76b91d0eb6029",
+    "bytes": 358
+  },
+  "paper/tables/q4_ring_ablation.csv": {
+    "sha256": "1dd45efe12948d892df6d4762181ed8e1d730e692db81bc6d14b50212b26d4d0",
+    "bytes": 429
+  }
+}

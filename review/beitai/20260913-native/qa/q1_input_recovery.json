@@ -1,0 +1,22 @@
+{
+  "numpy_version": "2.3.5",
+  "seed": 2026,
+  "rows": 400,
+  "max_absolute_errors": [
+    0.0,
+    3.3955984690692276e-09,
+    0.0,
+    1.6977992345346138e-09,
+    0.0,
+    1.198495738208294e-07
+  ],
+  "verified": true,
+  "columns": [
+    "k",
+    "diameter",
+    "covers",
+    "sec_radius",
+    "n_vertices",
+    "area"
+  ]
+}
